@@ -20,11 +20,12 @@ const Todo = lazy(() => import("./Todo"));
 const SmallFunction = lazy(() => import("./SmallFunction"));
 const NewSelect = lazy(() => import("./NewSelect"));
 const FileUplode = lazy(() => import("./FileUplode"));
+const CapitalWord = lazy(() => import("./CapitalWord"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <SmallFunction />
+        <CapitalWord />
       </Suspense>
     </>
   );

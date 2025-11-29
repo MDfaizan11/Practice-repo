@@ -109,15 +109,21 @@ function SmallFunction() {
 
   const largeNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
-  const result = largeNum.reduce((pre, curr) => {
-    if (curr < pre) {
+  const myresult = largeNum.reduce((pre, curr) => {
+    if (curr > pre) {
       return curr;
     } else {
       return pre;
     }
   });
 
+  console.log(myresult);
+
+  const result = largeNum.every((num) => {
+    return num / 2 === 0;
+  });
   console.log(result);
+  
 
   if (loading) {
     return <p> Loading...</p>;
