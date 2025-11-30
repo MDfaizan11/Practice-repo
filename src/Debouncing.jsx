@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 function Debouncing() {
-  const Name = [
+  const [search, setSearch] = useState("");
+  const [filteredNames, setFilteredNames] = useState([]);
+  const Names = [
     "Anil",
     "Sunil",
     "Kiran",
@@ -14,22 +16,20 @@ function Debouncing() {
     "Mahesh",
   ];
 
-  const [search, setSearch] = useState("");
-  const [Debouncing, setDebouncing] = useState("");
   useEffect(() => {
-    const hanlde = setTimeout(() => {
+    const handler = setTimeout(() => {
       if (!search) {
-        setDebouncing(Name);
+        setFilteredNames(Names);
       } else {
-        const filterData = Name.filter((item) =>
-          item.toLowerCase().includes(search.toLowerCase())
-        );
-        setDebouncing(filterData);
+        const filter = Names.filter((item) => {
+          return item.toLowerCase().includes(search.toLowerCase());
+        });
+        setFilteredNames(filter);
       }
     }, 1000);
-
-    return () => clearTimeout(hanlde);
+    return () => clearTimeout(handler);
   }, [search]);
+
   return (
     <>
       <p>Debouncing</p>
@@ -38,15 +38,18 @@ function Debouncing() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {Debouncing.length > 0
-        ? Debouncing.map((item, index) => {
+
+      {filteredNames.length > 0
+        ? filteredNames.map((item, index) => {
             return (
-              <>
-                <p key={index}>{item}</p>
-              </>
+              <div>
+                <ul>
+                  <li>{item}</li>
+                </ul>
+              </div>
             );
           })
-        : "No Data Found"}
+        : "no data found"}
     </>
   );
 }

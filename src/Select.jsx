@@ -15,26 +15,25 @@ function SearchableDropdown() {
     "San Jose",
   ];
 
-  const options = cityNames.map((city) => ({
-    value: city,
-    label: city,
+  const option = cityNames.map((item) => ({
+    value: item,
+    label: item.toLowerCase(),
   }));
-  console.log(options);
+  console.log(option);
 
-  const handleChange = (selectedOption) => {
-    console.log("Selected:", selectedOption);
-  };
-
+  function handleSelectMultiple(selected) {
+    const value = selected?.map((item) => item.value || []);
+    console.log(value);
+  }
   return (
     <div style={{ width: "250px" }}>
       <p className="text-lg font-semibold mb-2">Select City</p>
+
       <Select
-        options={options}
-        onChange={handleChange}
-        placeholder="Search or select a city..."
+        options={option}
         isClearable
-        isSearchable
-        // isMulti
+        isMulti
+        onChange={handleSelectMultiple}
       />
     </div>
   );

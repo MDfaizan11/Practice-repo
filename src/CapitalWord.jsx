@@ -2,6 +2,7 @@ import React from "react";
 
 function CapitalWord() {
   const MyName = "faizan khan";
+  
   function capitalWords(word) {
     const words = word.split(" ");
     console.log(words);

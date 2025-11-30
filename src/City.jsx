@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 
 function City() {
+  const [CountryName, setCountryName] = useState("");
+  const [cityName, setcityName] = useState([]);
+  const [selectedCity, setSelectedCity] = useState("");
+  console.log(selectedCity);
   const countries = [
     {
+      id: 1,
       country: "United States",
       cities: ["New York", "Los Angeles", "Chicago", "Houston", "Miami"],
     },
     {
+      id: 2,
       country: "Canada",
       cities: ["Toronto", "Vancouver", "Montreal", "Calgary", "Ottawa"],
     },
     {
+      id: 3,
       country: "United Kingdom",
       cities: ["London", "Manchester", "Birmingham", "Liverpool", "Edinburgh"],
     },
     {
+      id: 4,
       country: "Australia",
       cities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"],
     },
     {
+      id: 5,
       country: "India",
       cities: ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata"],
     },
@@ -50,46 +59,44 @@ function City() {
     },
   ];
 
-  const [selectedCountry, setSelectesCountry] = useState("");
-  console.log(selectedCountry);
-  const [CityName, setCityName] = useState([]);
-  function handleSelected(e) {
-    const myCountryName = e.target.value;
-    setSelectesCountry(myCountryName);
+  function handleSelectCountry(e) {
+    const selectCountry = e.target.value;
+    console.log(selectCountry);
+    setCountryName(selectCountry);
 
-    const singleCountry = countries.find(
-      (countryName) => countryName.country.trim() === myCountryName.trim()
-    );
-    setCityName(singleCountry ? singleCountry.cities : []);
+    const findCity = countries.find((item) => item.country === selectCountry);
+
+    setcityName(findCity?.cities || []);
+  }
+
+  function handleSelectCity(e) {
+    const city = e.target.value;
+    setSelectedCity(city);
   }
   return (
     <>
       <p>City</p>
 
-      <select name="" id="" value={selectedCountry} onChange={handleSelected}>
+      <select value={CountryName} onChange={handleSelectCountry}>
         <option value="">Select Country</option>
-        {countries.map((country, index) => {
-          return (
-            <>
-              <option value={country.country} key={index}>
-                {country.country}
-              </option>
-            </>
-          );
-        })}
+        {countries.length > 0
+          ? countries.map((item, index) => {
+              return (
+                <div>
+                  <option value={item.country}>{item.country}</option>
+                </div>
+              );
+            })
+          : "no data found"}
       </select>
 
-      <select name="" id="">
-        <option value="">Select City</option>
-        {CityName.map((city, index) => {
-          return (
-            <>
-              <option value={city} key={index}>
-                {city}
-              </option>
-            </>
-          );
-        })}
+      <select name="" id="" value={selectedCity} onChange={handleSelectCity}>
+        <option value="">Select city</option>
+        {cityName.length > 0
+          ? cityName.map((item) => {
+              return <option value={item}>{item}</option>;
+            })
+          : "no city found"}
       </select>
     </>
   );
