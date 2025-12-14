@@ -11,6 +11,7 @@ import Myselect from "./Myselect";
 import { lazy, Suspense } from "react";
 // import WIndow from "./WIndow";
 import Virtualized from "./Virtualized";
+import VirtualizedImages from "./VirtualizedImages";
 const City = lazy(() => import("./City"));
 const Debouncing = lazy(() => import("./Debouncing"));
 const Chart = lazy(() => import("./Chart"));
@@ -21,11 +22,13 @@ const SmallFunction = lazy(() => import("./SmallFunction"));
 const NewSelect = lazy(() => import("./NewSelect"));
 const FileUplode = lazy(() => import("./FileUplode"));
 const CapitalWord = lazy(() => import("./CapitalWord"));
+const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
+const StopWatch = lazy(() => import("./StopWatch"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Select />
+        <StopWatch />
       </Suspense>
     </>
   );

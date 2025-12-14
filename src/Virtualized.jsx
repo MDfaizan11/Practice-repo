@@ -1,6 +1,6 @@
 import React from "react";
 import { List } from "react-virtualized";
-import "react-virtualized/styles.css"; // Import styles if needed
+import "react-virtualized/styles.css"; 
 
 const MyVirtualizedList = () => {
   const users = Array.from({ length: 1000 }).map((_, index) => ({
@@ -31,25 +31,17 @@ const MyVirtualizedList = () => {
     );
   };
 
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-  const result = array.reduce((acc, curr) => {
-    if (curr > acc) {
-      return curr;
-    } else {
-      return acc;
-    }
-  });
-  console.log(result);
+  
   return (
     <List
-      width={1000} // Width of the list container
-      height={500} // Height of the visible area
-      rowCount={users.length} // Total number of rows
-      rowHeight={50} // Fixed height per row
+      width={1000} 
+      height={500} 
+      rowCount={users.length}
+      rowHeight={50} 
       rowRenderer={rowRenderer}
     />
   );
 };
 
 export default MyVirtualizedList;
+  
