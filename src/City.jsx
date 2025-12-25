@@ -63,11 +63,9 @@ function City() {
     const selectCountry = e.target.value;
     console.log(selectCountry);
     setCountryName(selectCountry);
-
     const findCity = countries.find((item) => item.country === selectCountry);
-
     setcityName(findCity?.cities || []);
-  }
+  }    
 
   function handleSelectCity(e) {
     const city = e.target.value;

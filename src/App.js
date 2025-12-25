@@ -24,11 +24,12 @@ const FileUplode = lazy(() => import("./FileUplode"));
 const CapitalWord = lazy(() => import("./CapitalWord"));
 const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
 const StopWatch = lazy(() => import("./StopWatch"));
+const Mypegination = lazy(() => import("./Mypegination"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <StopWatch />
+        <Mypegination />
       </Suspense>
     </>
   );
