@@ -1,4 +1,4 @@
-.pagination {
+/* .pagination {
   display: flex;
   gap: 8px;
   list-style: none;
@@ -11,4 +11,16 @@
 .pagination .active {
   font-weight: bold;
   color: red;
+}  */
+
+.Pegination {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.active {
+  color: red;
+}
+.myadd {
+  display: inline-block;
 }

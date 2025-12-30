@@ -25,11 +25,12 @@ const CapitalWord = lazy(() => import("./CapitalWord"));
 const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
 const StopWatch = lazy(() => import("./StopWatch"));
 const Mypegination = lazy(() => import("./Mypegination"));
+const Mypage = lazy(() => import("./Mypage"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Mypegination />
+        <Mypage />
       </Suspense>
     </>
   );

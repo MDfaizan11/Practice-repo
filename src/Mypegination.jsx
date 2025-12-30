@@ -49,8 +49,8 @@ function Mypegination() {
         ? currentItems.map((item) => {
             return (
               <>
-                {" "}
                 <p> {item.name}</p>
+                <button classname="myadd">add</button>
               </>
             );
           })
