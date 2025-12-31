@@ -26,11 +26,13 @@ const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
 const StopWatch = lazy(() => import("./StopWatch"));
 const Mypegination = lazy(() => import("./Mypegination"));
 const Mypage = lazy(() => import("./Mypage"));
+const RemoveDub = lazy(() => import("./RemoveDub"));
+const ReverseString = lazy(() => import("./ReverseString"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Mypage />
+        <ReverseString />
       </Suspense>
     </>
   );
