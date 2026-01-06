@@ -28,11 +28,12 @@ const Mypegination = lazy(() => import("./Mypegination"));
 const Mypage = lazy(() => import("./Mypage"));
 const RemoveDub = lazy(() => import("./RemoveDub"));
 const ReverseString = lazy(() => import("./ReverseString"));
+const FindMissElement = lazy(() => import("./FindMissElement"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <ReverseString />
+        <StopWatch />
       </Suspense>
     </>
   );
