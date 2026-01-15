@@ -1,0 +1,11 @@
+.pegination {
+  display: flex;
+
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+.active {
+  color: red;
+  font-size: large;
+}

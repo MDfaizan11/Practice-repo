@@ -1,7 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Pegination from "./Pegination";
-import Newpegination from "./Newpegination";
+
 import ExcelExport from "./ExcelExport";
 import ExcelExportComponent from "./ExcelExportComponent";
 import Select from "./Select";
@@ -24,16 +23,17 @@ const FileUplode = lazy(() => import("./FileUplode"));
 const CapitalWord = lazy(() => import("./CapitalWord"));
 const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
 const StopWatch = lazy(() => import("./StopWatch"));
-const Mypegination = lazy(() => import("./Mypegination"));
-const Mypage = lazy(() => import("./Mypage"));
+
 const RemoveDub = lazy(() => import("./RemoveDub"));
 const ReverseString = lazy(() => import("./ReverseString"));
 const FindMissElement = lazy(() => import("./FindMissElement"));
+const CountWovel = lazy(() => import("./CountWovel"));
+const FindLargestString = lazy(() => import("./FindLargestSting"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindMissElement />
+        <FindLargestString />
       </Suspense>
     </>
   );
