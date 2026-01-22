@@ -4,7 +4,6 @@ function FindLargestSting() {
   const myName = "mohammed faizannnnnnnnn";
   function findLarge(name) {
     const num = name.split(" ");
-    console.log(num);
     let largest = "";
     for (let word of num) {
       if (word.length > largest.length) {

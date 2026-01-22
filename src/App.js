@@ -11,6 +11,7 @@ import { lazy, Suspense } from "react";
 // import WIndow from "./WIndow";
 import Virtualized from "./Virtualized";
 import VirtualizedImages from "./VirtualizedImages";
+
 const City = lazy(() => import("./City"));
 const Debouncing = lazy(() => import("./Debouncing"));
 const Chart = lazy(() => import("./Chart"));
@@ -23,17 +24,20 @@ const FileUplode = lazy(() => import("./FileUplode"));
 const CapitalWord = lazy(() => import("./CapitalWord"));
 const ImageVirtualization = lazy(() => import("./VirtualizedImages"));
 const StopWatch = lazy(() => import("./StopWatch"));
-
 const RemoveDub = lazy(() => import("./RemoveDub"));
 const ReverseString = lazy(() => import("./ReverseString"));
 const FindMissElement = lazy(() => import("./FindMissElement"));
 const CountWovel = lazy(() => import("./CountWovel"));
 const FindLargestString = lazy(() => import("./FindLargestSting"));
+const Palindrom = lazy(() => import("./Palindrom"));
+const Parent = lazy(() => import("./Parent"));
+const Child = lazy(() => import("./Child"));
+const Header = lazy(() => import("./Header"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargestString />
+        <Header />
       </Suspense>
     </>
   );
