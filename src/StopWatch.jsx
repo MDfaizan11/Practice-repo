@@ -41,7 +41,7 @@ import React, { useEffect, useState } from "react";
 function StopWatch() {
   const [running, setRunning] = useState(false);
   const [time, setTime] = useState(0);
-
+  
   useEffect(() => {
     if (!running) return;
     const timer = setInterval(() => {

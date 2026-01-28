@@ -100,7 +100,7 @@ function FileUplode() {
 
       localStorage.setItem("files", JSON.stringify(obj));
     },
-    [email, password, file]
+    [email, password, file],
   );
 
   return (

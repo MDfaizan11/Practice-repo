@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Header />
+        <Todo />
       </Suspense>
     </>
   );

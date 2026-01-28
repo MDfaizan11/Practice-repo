@@ -1,89 +1,123 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Todo() {
-  const [AddTodo, setAddTodo] = useState("");
-  const [getData, setGetData] = useState([]);
-  const [refreshKey, setrefreshKey] = useState(0);
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [data, setData] = useState([]);
+  const [EditId, setEditId] = useState(null);
 
   useEffect(() => {
-    const getAllTodo = JSON.parse(localStorage.getItem("todo")) || [];
-    console.log(getAllTodo);
-    setGetData(getAllTodo);
-  }, [refreshKey]);
+    const storedTodos = JSON.parse(localStorage.getItem("mytodo")) || [];
+    if (storedTodos.length > 0) {
+      setData(storedTodos);
+    }
+  }, []);
+  function handleAddTodo(e) {
+    e.preventDefault();
+    if (!name.trim()) {
+      return alert("Name Required");
+    }
+    if (!age.trim()) {
+      return alert("Age Required");
+    }
+    if (!email.trim()) {
+      return alert("Email Required");
+    }
 
-  const handleSubmitTodo = useCallback(
-    (e) => {
-      e.preventDefault();
-
-      if (AddTodo.trim().length === 0) {
-        return alert("Enter Something");
-      }
-
-      const obj = {
-        TodoName: AddTodo,
-        complete: false,
+    if (EditId) {
+      const updatetodo = data.map((item) =>
+        item.id === EditId
+          ? {
+              ...item,
+              name: name,
+              age: age,
+              email: email,
+            }
+          : item,
+      );
+      setData(updatetodo);
+      localStorage.setItem("mytodo", JSON.stringify(updatetodo));
+      alert("Todo Updated");
+      setName("");
+      setAge("");
+      setEmail("");
+      setEditId(null);
+      return;
+    } else {
+      const mytodo = {
+        id: Date.now(),
+        name: name,
+        age: age,
+        email: email,
       };
 
-      const updateTodo = [...getData, obj];
-      localStorage.setItem("todo", JSON.stringify(updateTodo));
-      setAddTodo("");
-      setGetData(updateTodo);
-      alert("Todo Added Successfully");
-      setrefreshKey(refreshKey + 1);
-    },
-    [AddTodo]
-  );
+      const multipleTodos = [...data, mytodo];
 
-  function handleComplete(index) {
-    const updatedTodos = getData.map((item, i) => {
-      if (i === index) {
-        return { ...item, complete: !item.complete };
-      }
-      return item;
-    });
-
-    setGetData(updatedTodos);
-    localStorage.setItem("todo", JSON.stringify(updatedTodos));
+      localStorage.setItem("mytodo", JSON.stringify(multipleTodos));
+      setData(multipleTodos);
+      alert("Todo Added");
+      setName("");
+      setAge("");
+      setEmail("");
+    }
   }
 
+  function handleDeleteTodo(id) {
+    const filter = data.filter((item, index) => item.id !== id);
+    setData(filter);
+    localStorage.setItem("mytodo", JSON.stringify(filter));
+    alert("Todo Deleted");
+  }
+
+  function handleEdit(item) {
+    console.log(item);
+    setName(item.name);
+    setAge(item.age);
+    setEmail(item.email);
+    setEditId(item.id);
+  }
   return (
     <>
-      <p>todo</p>
+      <p>Todo</p>
 
-      <form onSubmit={handleSubmitTodo}>
+      <form onSubmit={handleAddTodo}>
         <input
           type="text"
-          value={AddTodo}
-          onChange={(e) => setAddTodo(e.target.value)}
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-
-        <button type="submit">Submit</button>
+        <input
+          type="number"
+          placeholder="enter age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">Add todo</button>
       </form>
 
-      {getData.length > 0
-        ? getData.map((item, index) => {
+      {data.length > 0
+        ? data.map((item) => {
             return (
-              <div style={{ display: "flex" }} key={index}>
-                <input
-                  type="checkbox"
-                  value={item.complete}
-                  onChange={() => handleComplete(index)}
-                />
-                <ul>
-                  <li
-                    style={{
-                      listStyleType: "none",
-                      textDecoration: item.complete ? "line-through" : "none",
-                    }}
-                  >
-                    {" "}
-                    {item.TodoName}
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li>{item.name}</li>
+                <li>{item.age}</li>
+                <li>{item.email}</li>
+                <button onClick={() => handleEdit(item)}>Edit</button>
+                <button onClick={() => handleDeleteTodo(item.id)}>
+                  delete
+                </button>
+              </ul>
             );
           })
-        : " No Todo found"}
+        : "No Todos Found"}
     </>
   );
 }
