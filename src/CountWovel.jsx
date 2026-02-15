@@ -2,18 +2,11 @@ import React from "react";
 
 function CountWovel() {
   const myName = "mohammed faizan";
-  const vowels = ["a", "e", "i", "o", "u"];
-  function countVowels(name) {
-    const nameInLowerCase = name.toLowerCase();
-    console.log(nameInLowerCase);
-    const nameArray = nameInLowerCase.split("");
-    console.log(nameArray);
-    const result = nameArray.filter((char) => vowels.includes(char));
-    console.log(result.length);
-  }
-  countVowels(myName);
-  
-
+  const wovel = ["m", "h", "i"];
+  const filterData = myName.toLowerCase().split("");
+  console.log(filterData);
+  const result = filterData.filter((item, index) => wovel.includes(item));
+  console.log(result.length);
   return <div>CountWovel</div>;
 }
 

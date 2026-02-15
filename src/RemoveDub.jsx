@@ -1,7 +1,7 @@
 import React from "react";
 
 function RemoveDub() {
-  const number = [1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9];
+  const number = [0, 0, false, 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9];
 
   //   const result = [...new Set(number)];
 
@@ -35,7 +35,13 @@ function RemoveDub() {
     console.log(result);
     return result;
   }
+
   removedubb(arrayNumberr);
+
+  const removefalse = number.filter(
+    (item, index) => item !== 0 && item !== false,
+  );
+  console.log(removefalse);
 
   return <div>RemoveDub</div>;
 }

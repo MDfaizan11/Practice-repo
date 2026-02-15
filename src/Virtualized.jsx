@@ -71,7 +71,7 @@ function Virtualized() {
     <>
       <p>Virtualized</p>
       <List
-        width={800}
+        width={8000}
         height={500}
         rowRenderer={rowRender}
         rowCount={users.length}
