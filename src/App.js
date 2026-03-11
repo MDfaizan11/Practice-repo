@@ -33,11 +33,13 @@ const Palindrom = lazy(() => import("./Palindrom"));
 const Parent = lazy(() => import("./Parent"));
 const Child = lazy(() => import("./Child"));
 const Header = lazy(() => import("./Header"));
+const CustomHook = lazy(() => import("./CustomHook"));
+const CustomDataShow = lazy(() => import("./CustomDataShow"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargestString />
+        <CustomDataShow />
       </Suspense>
     </>
   );

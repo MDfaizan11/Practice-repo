@@ -59,6 +59,8 @@ function StopWatch() {
       <p>StopWatch</p>
       {hours.toString().padStart(2, "0")}: {minutes.toString().padStart(2, "0")}
       :{secound.toString().padStart(2, "0")}
+
+      
       <button onClick={() => setRunning(true)} disabled={running}>
         start
       </button>
