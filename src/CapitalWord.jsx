@@ -20,17 +20,17 @@
 import React from "react";
 
 function CapitalWord() {
-  const myname = "mohammed faizan";
+  const name = "mohammed shabaz";
+  function LetterCapital(word) {
+    const newWord = word.split(" ");
+    console.log(newWord);
 
-  function CapitalFirstWord(word) {
-    const newName = word.split(" ");
-    console.log(newName);
-    const result = newName.map((item) => {
+    const result = newWord.map((item) => {
       return item.charAt(0).toUpperCase() + item.slice(1);
     });
     console.log(result.join(" "));
   }
-  CapitalFirstWord(myname);
+  LetterCapital(name);
   return <div>CapitalWord</div>;
 }
 

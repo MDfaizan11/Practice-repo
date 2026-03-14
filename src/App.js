@@ -35,11 +35,12 @@ const Child = lazy(() => import("./Child"));
 const Header = lazy(() => import("./Header"));
 const CustomHook = lazy(() => import("./CustomHook"));
 const CustomDataShow = lazy(() => import("./CustomDataShow"));
+const FetchComment = lazy(() => import("./FetchComment"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CustomDataShow />
+        <Debouncing />
       </Suspense>
     </>
   );

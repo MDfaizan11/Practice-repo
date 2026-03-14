@@ -17,17 +17,18 @@ import React from "react";
 function CountWovel() {
   const myname = "mohammed faizan";
   const Wovel = ["m", "a", "z"];
-  const newWord = myname.toLowerCase().split("");
-  console.log(newWord);
-  const result = newWord.filter((item, index) => Wovel.includes(item));
-  console.log(result);
-  // const remove = [...new Set(result)];
-  // console.log(remove.length);
 
-  const removedublicate = result.filter(
-    (item, index) => result.indexOf(item) === index,
-  );
-  console.log(removedublicate.length);
+  function Count(word) {
+    const newWord = word.toLowerCase().split("");
+    console.log(newWord);
+    const result = newWord.filter((item, index) => Wovel.includes(item));
+    console.log(result);
+    const removeDublicate = result.filter(
+      (item, index) => result.indexOf(item) === index,
+    );
+    console.log(removeDublicate);
+  }
+  Count(myname);
   return <div>CountWovel</div>;
 }
 

@@ -1,61 +1,3 @@
-// import React, { useEffect, useState } from "react";
-
-// function Debouncing() {
-//   const [search, setSearch] = useState("");
-//   const [filteredNames, setFilteredNames] = useState([]);
-//   const Names = [
-//     "Anil",
-//     "Sunil",
-//     "Kiran",
-//     "Sohan",
-//     "Mohan",
-//     "Ramesh",
-//     "Suresh",
-//     "Dinesh",
-//     "Rajesh",
-//     "Mahesh",
-//   ];
-
-//   useEffect(() => {
-//     const handler = setTimeout(() => {
-//       if (!search) {
-//         setFilteredNames(Names);
-//       } else {
-//         const filter = Names.filter((item) => {
-//           return item.toLowerCase().includes(search.toLowerCase());
-//         });
-//         setFilteredNames(filter);
-//       }
-//     }, 1000);
-//     return () => clearTimeout(handler);
-//   }, [search]);
-
-//   return (
-//     <>
-//       <p>Debouncing</p>
-//       <input
-//         type="search"
-//         value={search}
-//         onChange={(e) => setSearch(e.target.value)}
-//       />
-
-//       {filteredNames.length > 0
-//         ? filteredNames.map((item, index) => {
-//             return (
-//               <div>
-//                 <ul>
-//                   <li>{item}</li>
-//                 </ul>
-//               </div>
-//             );
-//           })
-//         : "no data found"}
-//     </>
-//   );
-// }
-
-// export default Debouncing;
-
 import React, { useState, useEffect } from "react";
 
 function Debouncing() {
@@ -75,22 +17,24 @@ function Debouncing() {
   ];
 
   useEffect(() => {
-    const debouncing = setTimeout(() => {
+    const Debouncing = setTimeout(() => {
+      console.log(Search);
+
       if (!Search) {
         setFilterData(Names);
       } else {
-        let filterData = Names.filter((item) => {
+        const filter = Names.filter((item, index) => {
           return item.toLowerCase().includes(Search.toLowerCase());
         });
-        setFilterData(filterData);
+        setFilterData(filter);
       }
     }, 1000);
-    return () => clearTimeout(debouncing);
+    return () => clearTimeout(Debouncing);
   }, [Search]);
-
   return (
     <>
       <p>Debouncing</p>
+
       <input
         type="search"
         value={Search}
@@ -98,7 +42,7 @@ function Debouncing() {
       />
       {myfilterData.map((item, index) => {
         return (
-          <ul>
+          <ul key={index}>
             <li>{item}</li>
           </ul>
         );

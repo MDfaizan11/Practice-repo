@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 
 function City() {
@@ -56,36 +54,50 @@ function City() {
       ],
     },
   ];
-  const [cities, setCities] = useState([]);
-  const [SelectedCountry, setSelectedCountry] = useState([]);
 
-  function handleSelectCountry(e) {
+  const [selectedCountry, setSelectedCountry] = useState([]);
+  const [SelectedCity, setSelectdCity] = useState([]);
+  const [CityName, setCitName] = useState([]);
+  function handleChangeCountry(e) {
     const myCountry = e.target.value;
     console.log(myCountry);
     setSelectedCountry(myCountry);
-    const cities = countries.find((item) => item.country === myCountry);
-    setCities(cities?.cities || []);
+    const City = countries.find((item, index) => item.country === myCountry);
+    // const curentCity = ;
+    setSelectdCity(City?.cities || []);
+  }
+
+  function handleCityName(e) {
+    const SelectdName = e.target.value;
+    console.log(SelectdName);
   }
   return (
     <>
       <p>City</p>
+
       <select
-        value={SelectedCountry}
-        onChange={handleSelectCountry}
+        name=""
+        id=""
+        value={selectedCountry}
+        onChange={handleChangeCountry}
       >
         <option value="">Select Country</option>
-        {countries.map((item, index) => {
+        {countries.map((country) => {
           return (
-            <option value={item.country} key={item.id}>
-              {item.country}
+            <option value={country.country} key={country.country}>
+              {country.country}
             </option>
           );
         })}
       </select>
-      <select>
-        <option value="">select cities</option>
-        {cities.map((item, index) => {
-          return <option value={item}>{item}</option>;
+      <select name="" id="" value={CityName} onChange={handleCityName}>
+        <option value="">Select City</option>
+        {SelectedCity.map((item, index) => {
+          return (
+            <option value={item} key={item}>
+              {item}
+            </option>
+          );
         })}
       </select>
     </>
