@@ -36,11 +36,12 @@ const Header = lazy(() => import("./Header"));
 const CustomHook = lazy(() => import("./CustomHook"));
 const CustomDataShow = lazy(() => import("./CustomDataShow"));
 const FetchComment = lazy(() => import("./FetchComment"));
+const FindLargeNumber = lazy(() => import("./FIndLargeNumber"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargestString />
+        <FindLargeNumber />
       </Suspense>
     </>
   );
