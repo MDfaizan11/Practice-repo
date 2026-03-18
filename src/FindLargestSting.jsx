@@ -1,38 +1,46 @@
 import React from "react";
 
 function FindLargestSting() {
-  const myName = "mohammed faizannnnnnnnn";
-  function findLarge(name) {
-    const num = name.split(" ");
-    console.log(num);
-    let largest = "";
-    for (let word of num) {
-      if (word.length > largest.length) {
-        largest = word;
-      }
-    }
-    console.log(largest);
-  }
-  findLarge(myName);
+  let myName = "mohammed faizan";
+  let num = myName.split(" ");
+  console.log(num);
 
-  const strings = ["apple", "banana", "watermelon", "kiwi"];
+  const largeString = num.reduce((prev, curr) => {
+    return curr.length > prev.length ? curr : prev;
+  });
+  console.log(largeString);
 
-  let largest = "";
+  const smallString = num.reduce((prev, curr) => {
+    return curr.length < prev.length ? curr : prev;
+  });
+  console.log(smallString);
 
-  for (let str of strings) {
-    if (str.length > largest.length) {
-      largest = str;
+  let largestSting = "";
+  for (let large of num) {
+    if (large.length > largestSting.length) {
+      largestSting = large;
     }
   }
+  console.log(largestSting);
 
-  console.log(largest); // watermelon
-  const stringss = ["apple", "banana", "watermelon", "kiwi"];
+  let smallestString = num[0];
+  for (let small of num) {
+    if (small.length < smallestString.length) {
+      smallestString = small;
+    }
+  }
+  console.log(smallestString);
 
-  const largestt = stringss.reduce((longest, current) =>
-    current.length > longest.length ? current : longest,
-  );
-
-  console.log(largestt); // watermelon
+  function ReverseName(word) {
+    console.log(word);
+    // let result = word.reverse().join(" ");
+    // console.log(result);
+    let result = word.map((item, index) => {
+      return item.split("").reverse().join(" ");
+    });
+    console.log(result.join(" , "));
+  }
+  ReverseName(num);
   return <div>FindLargestSting</div>;
 }
 
