@@ -11,6 +11,7 @@ import { lazy, Suspense } from "react";
 // import WIndow from "./WIndow";
 import Virtualized from "./Virtualized";
 import VirtualizedImages from "./VirtualizedImages";
+import MatrialPegination from "./MatrialPegination";
 
 const City = lazy(() => import("./City"));
 const Debouncing = lazy(() => import("./Debouncing"));
@@ -41,7 +42,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargeNumber />
+        <MatrialPegination />
       </Suspense>
     </>
   );
