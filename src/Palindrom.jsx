@@ -19,8 +19,29 @@ function Palindrom() {
 
     const result = String.filter((char) => vowels.includes(char));
     console.log(result);
+
+    const remove = result.filter(
+      (char, index) => result.indexOf(char) === index,
+    );
+    console.log(remove);
   }
   CountVowel(myNameOne);
+  function findPalim(myName) {
+    const word = myName.toLowerCase();
+    console.log(word);
+    let res = [];
+    for (let i = word.length - 1; i >= 0; i--) {
+      res.push(word[i]);
+    }
+    console.log(res);
+    let result = word === res.join("");
+    console.log(result);
+  }
+  findPalim(myName);
+
+  // console.log(res.join(""));
+  // let result = res === myName ? true : false;
+  // console.log(result);
   return <div>Palindrom</div>;
 }
 
