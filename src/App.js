@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Palindrom />
+        <FindLargestString />
       </Suspense>
     </>
   );

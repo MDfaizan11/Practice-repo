@@ -33,7 +33,7 @@ function Palindrom() {
     for (let i = word.length - 1; i >= 0; i--) {
       res.push(word[i]);
     }
-    console.log(res);
+    console.log(res.join(""));
     let result = word === res.join("");
     console.log(result);
   }

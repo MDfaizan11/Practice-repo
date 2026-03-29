@@ -77,6 +77,29 @@ function RemoveDub() {
     }
   }
   console.log(largestNum);
+  let smallestnum = array[0];
+  for (let small of array) {
+    if (small < smallestnum) {
+      smallestnum = small;
+    }
+  }
+  console.log(smallestnum);
+
+  function findDuplicates(arr) {
+    let count = {};
+    let duplicates = [];
+
+    for (let num of arr) {
+      count[num] = (count[num] || 0) + 1;
+      if (count[num] === 2) {
+        duplicates.push(num);
+      }
+    }
+
+    return duplicates;
+  }
+
+  console.log(findDuplicates(array));
 
   return <div>RemoveDub</div>;
 }
