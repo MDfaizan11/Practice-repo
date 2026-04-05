@@ -1,46 +1,83 @@
+// import React from "react";
+
+// function FindLargestSting() {
+//   let myName = "mohammed faizan";
+//   let num = myName.split(" ");
+//   console.log(num);
+
+//   const largeString = num.reduce((prev, curr) => {
+//     return curr.length > prev.length ? curr : prev;
+//   });
+//   console.log(largeString);
+
+//   const smallString = num.reduce((prev, curr) => {
+//     return curr.length < prev.length ? curr : prev;
+//   });
+//   console.log(smallString);
+
+//   let largestSting = "";
+//   for (let large of num) {
+//     if (large.length > largestSting.length) {
+//       largestSting = large;
+//     }
+//   }
+//   console.log(largestSting);
+
+//   let smallestString = num[0];
+//   for (let small of num) {
+//     if (small.length < smallestString.length) {
+//       smallestString = small;
+//     }
+//   }
+//   console.log(smallestString);
+
+//   function ReverseName(word) {
+//     console.log(word);
+//     // let result = word.reverse().join(" ");
+//     // console.log(result);
+//     let result = word.map((item, index) => {
+//       return item.split("").reverse().join(" ");
+//     });
+//     console.log(result.join(" , "));
+//   }
+//   ReverseName(num);
+//   return <div>FindLargestSting</div>;
+// }
+
+// export default FindLargestSting;
+
 import React from "react";
 
 function FindLargestSting() {
-  let myName = "mohammed faizan";
-  let num = myName.split(" ");
-  console.log(num);
+  let myname = "mohammed faizaan";
+  let newName = myname.toLowerCase().split(" ");
+  console.log(newName);
 
-  const largeString = num.reduce((prev, curr) => {
-    return curr.length > prev.length ? curr : prev;
+  const result = newName.reduce((prev, curr) => {
+    if (curr.length > prev.length) {
+      return curr;
+    } else {
+      return prev;
+    }
   });
-  console.log(largeString);
+  console.log(result);
 
-  const smallString = num.reduce((prev, curr) => {
-    return curr.length < prev.length ? curr : prev;
-  });
-  console.log(smallString);
+  let largestString = "";
 
-  let largestSting = "";
-  for (let large of num) {
-    if (large.length > largestSting.length) {
-      largestSting = large;
+  for (let large of newName) {
+    if (large.length > largestString.length) {
+      largestString = large;
     }
   }
-  console.log(largestSting);
+  console.log(largestString);
 
-  let smallestString = num[0];
-  for (let small of num) {
-    if (small.length < smallestString.length) {
+  let smallestString = newName[0];
+  for (let small of newName) {
+    if (small < smallestString) {
       smallestString = small;
     }
   }
   console.log(smallestString);
-
-  function ReverseName(word) {
-    console.log(word);
-    // let result = word.reverse().join(" ");
-    // console.log(result);
-    let result = word.map((item, index) => {
-      return item.split("").reverse().join(" ");
-    });
-    console.log(result.join(" , "));
-  }
-  ReverseName(num);
   return <div>FindLargestSting</div>;
 }
 

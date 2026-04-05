@@ -38,11 +38,12 @@ const CustomHook = lazy(() => import("./CustomHook"));
 const CustomDataShow = lazy(() => import("./CustomDataShow"));
 const FetchComment = lazy(() => import("./FetchComment"));
 const FindLargeNumber = lazy(() => import("./FIndLargeNumber"));
+const CountFrequancy = lazy(() => import("./CountFrequancy"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargestString />
+        <FindMissElement />
       </Suspense>
     </>
   );
