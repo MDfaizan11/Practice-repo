@@ -81,37 +81,12 @@
 // export default MatrialPegination;
 
 import React, { useEffect, useState } from "react";
-import { CircularProgress } from "@mui/material";
 
 function MatrialPegination() {
-  const [PostData, setPostData] = useState([]);
-  const [Loading, setLoading] = useState(false);
-  useEffect(() => {
-    async function getUserData() {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts",
-        );
-        const data = await response.json();
-        console.log(data);
-        setPostData(data);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    }
-    getUserData();
-  }, []);
-  if (Loading) {
-    return <CircularProgress />;
-  }
-  return <div>
-    <p>
-      
-    </p>
-    MatrialPegination</div>;
+  return (
+    <>
+      <p>material pegination</p>
+    </>
+  );
 }
-
 export default MatrialPegination;

@@ -24,6 +24,13 @@ function ReverseString() {
     console.log(result.join(" "));
   }
   reversedata(Myname);
+
+  let myname = "mohammed faizan";
+  let result = [];
+  for (let i = myname.length - 1; i >= 0; i--) {
+    result.push(myname[i]);
+  }
+  console.log(result.join(""));
   return <div>ReverseString</div>;
 }
 

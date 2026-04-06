@@ -36,7 +36,7 @@
 import React from "react";
 
 function FindMissElement() {
-  let array = [1, 2, 4, 5, 6, 7, 9];
+  let array = [1, 2, 4, 5, 6, 7,8, 9];
   function findMiss(num) {
     let arrayLenght = num.length + 1;
     console.log(arrayLenght);
