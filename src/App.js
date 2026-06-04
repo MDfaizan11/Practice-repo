@@ -39,11 +39,12 @@ const CustomDataShow = lazy(() => import("./CustomDataShow"));
 const FetchComment = lazy(() => import("./FetchComment"));
 const FindLargeNumber = lazy(() => import("./FIndLargeNumber"));
 const CountFrequancy = lazy(() => import("./CountFrequancy"));
+const ShowCustomData2 = lazy(() => import("./ShowCustomData2"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <ReverseString />
+        <ShowCustomData2 />
       </Suspense>
     </>
   );
