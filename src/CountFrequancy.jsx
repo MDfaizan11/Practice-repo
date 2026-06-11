@@ -1,17 +1,34 @@
+// // import React from "react";
+
+// // function CountFrequancy() {
+// //   function Count(word) {
+// //     console.log(word);
+// //     let result = {};
+
+// //     for (let char of word) {
+// //       result[char] = (result[char] || 0) + 1;
+// //     }
+// //     console.log(result);
+// //     return result;
+// //   }
+// //   Count("aassccmmm");
+// //   return <div>CountFrequancy</div>;
+// // }
+
+// // export default CountFrequancy;
+
 // import React from "react";
 
 // function CountFrequancy() {
-//   function Count(word) {
-//     console.log(word);
+//   function count(word) {
 //     let result = {};
-
 //     for (let char of word) {
 //       result[char] = (result[char] || 0) + 1;
 //     }
 //     console.log(result);
-//     return result;
 //   }
-//   Count("aassccmmm");
+
+//   count("1122336669999");
 //   return <div>CountFrequancy</div>;
 // }
 
@@ -20,15 +37,16 @@
 import React from "react";
 
 function CountFrequancy() {
-  function count(word) {
+  let word = "aaavvvvbbbrrrrssss";
+  function countNumer() {
     let result = {};
-    for (let char of word) {
-      result[char] = (result[char] || 0) + 1;
+    for (let car of word) {
+      result[car] = (result[car] || 0) + 1;
     }
     console.log(result);
+    return result;
   }
-
-  count("1122336669999");
+  countNumer();
   return <div>CountFrequancy</div>;
 }
 

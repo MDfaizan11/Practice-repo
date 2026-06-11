@@ -62,6 +62,14 @@ function FIndLargeNumber() {
   const big = Math.max(...array);
   console.log(big);
 
+  let findMAx = array[0];
+  for (let large of array) {
+    if (large > findMAx) {
+      findMAx = large;
+    }
+  }
+  console.log(findMAx);
+
   return <div>FIndLargeNumber</div>;
 }
 

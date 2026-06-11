@@ -1,8 +1,61 @@
+// // import React, { useEffect, useState } from "react";
+
+// // function Debouncing() {
+// //   const [search, setSearch] = useState("");
+// //   const [Debouncing, setDebouncing] = useState([]);
+// //   const Names = [
+// //     "Anil",
+// //     "Sunil",
+// //     "Kiran",
+// //     "Sohan",
+// //     "Mohan",
+// //     "Ramesh",
+// //     "Suresh",
+// //     "Dinesh",
+// //     "Rajesh",
+// //     "Mahesh",
+// //   ];
+
+// //   useEffect(() => {
+// //     const debouncing = setTimeout(() => {
+// //       if (!search) {
+// //         setDebouncing(Names);
+// //       } else {
+// //         const result = Names.filter((item, index) => {
+// //           return item.toLowerCase().includes(search.toLowerCase());
+// //         });
+// //         setDebouncing(result);
+// //       }
+// //     }, 1000);
+// //     return () => clearTimeout(debouncing);
+// //   }, [search]);
+// //   return (
+// //     <div>
+// //       <p>Debouncing</p>
+
+// //       <input
+// //         type="text"
+// //         value={search}
+// //         onChange={(e) => setSearch(e.target.value)}
+// //       />
+// //       {Debouncing.map((item, index) => {
+// //         return (
+// //           <ul key={index}>
+// //             <li>{item}</li>
+// //           </ul>
+// //         );
+// //       })}
+// //     </div>
+// //   );
+// // }
+
+// // export default Debouncing;
+
 // import React, { useEffect, useState } from "react";
 
 // function Debouncing() {
 //   const [search, setSearch] = useState("");
-//   const [Debouncing, setDebouncing] = useState([]);
+//   const [DebouncingSearch, setDebouncingSearch] = useState([]);
 //   const Names = [
 //     "Anil",
 //     "Sunil",
@@ -17,35 +70,36 @@
 //   ];
 
 //   useEffect(() => {
-//     const debouncing = setTimeout(() => {
+//     let searchDebounce = setTimeout(() => {
 //       if (!search) {
-//         setDebouncing(Names);
+//         setDebouncingSearch(Names);
 //       } else {
-//         const result = Names.filter((item, index) => {
+//         let result = Names.filter((item, index) => {
 //           return item.toLowerCase().includes(search.toLowerCase());
 //         });
-//         setDebouncing(result);
+//         setDebouncingSearch(result);
 //       }
 //     }, 1000);
-//     return () => clearTimeout(debouncing);
+//     return () => clearTimeout(searchDebounce);
 //   }, [search]);
 //   return (
-//     <div>
+//     <>
 //       <p>Debouncing</p>
-
 //       <input
-//         type="text"
+//         type="search"
 //         value={search}
 //         onChange={(e) => setSearch(e.target.value)}
 //       />
-//       {Debouncing.map((item, index) => {
+//       {DebouncingSearch.map((item, index) => {
 //         return (
-//           <ul key={index}>
-//             <li>{item}</li>
-//           </ul>
+//           <>
+//             <ul key={index}>
+//               <li>{item}</li>
+//             </ul>
+//           </>
 //         );
 //       })}
-//     </div>
+//     </>
 //   );
 // }
 
@@ -55,7 +109,7 @@ import React, { useEffect, useState } from "react";
 
 function Debouncing() {
   const [search, setSearch] = useState("");
-  const [DebouncingSearch, setDebouncingSearch] = useState([]);
+  const [debouncing, setDebouncing] = useState([]);
   const Names = [
     "Anil",
     "Sunil",
@@ -70,17 +124,18 @@ function Debouncing() {
   ];
 
   useEffect(() => {
-    let searchDebounce = setTimeout(() => {
+    let debouncingData = setTimeout(() => {
       if (!search) {
-        setDebouncingSearch(Names);
+        setDebouncing(Names);
       } else {
-        let result = Names.filter((item, index) => {
-          return item.toLowerCase().includes(search.toLowerCase());
+        let filter = Names.filter((name) => {
+          return name.toLowerCase().includes(search.toLowerCase());
         });
-        setDebouncingSearch(result);
+        setDebouncing(filter);
       }
     }, 1000);
-    return () => clearTimeout(searchDebounce);
+
+    return () => clearTimeout(debouncingData);
   }, [search]);
   return (
     <>
@@ -90,15 +145,17 @@ function Debouncing() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {DebouncingSearch.map((item, index) => {
-        return (
-          <>
-            <ul key={index}>
-              <li>{item}</li>
-            </ul>
-          </>
-        );
-      })}
+      {debouncing.length > 0
+        ? debouncing.map((item) => {
+            return (
+              <>
+                <ul>
+                  <li>{item}</li>
+                </ul>
+              </>
+            );
+          })
+        : "no data found"}
     </>
   );
 }
