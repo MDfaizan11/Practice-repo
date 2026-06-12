@@ -44,7 +44,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CountFrequancy />
+        <Palindrom />
       </Suspense>
     </>
   );
