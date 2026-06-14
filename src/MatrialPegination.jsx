@@ -81,11 +81,94 @@
 // export default MatrialPegination;
 
 import React, { useEffect, useState } from "react";
-
+import { CircularProgress } from "@mui/material";
+import ReactPaginate from "react-paginate";
 function MatrialPegination() {
+  const [PostData, setPostData] = useState([]);
+  const [Loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemPerPage = 15;
+  const endOffset = itemOffset + itemPerPage;
+  const currentItems = PostData.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(PostData.length / itemPerPage);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [DebouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+  useEffect(() => {
+    async function getData() {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+        );
+        const data = await response.json();
+        console.log(data);
+        setPostData(data);
+
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
+
+  function handlePageClick({ selected }) {
+    const newOffset = selected * itemPerPage;
+    setItemOffset(newOffset);
+  }
+
+  useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      setDebouncedSearchTerm(searchTerm);
+    }, 1000);
+
+    return () => clearTimeout(debounceTimer);
+  }, [searchTerm]);
+
+  const filteredData = currentItems.filter((item) =>
+    item.title.toLowerCase().includes(DebouncedSearchTerm.toLowerCase()),
+  );
+  
+  if (Loading) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <CircularProgress />
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <p>Error: {error.message}</p>
+      </div>
+    );
+  }
   return (
     <>
       <p>material pegination</p>
+      <input
+        type="search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      {filteredData.length > 0
+        ? filteredData.map((item, index) => {
+            return <div key={item.id}>{item.title}</div>;
+          })
+        : "no data found"}
+
+      <ReactPaginate
+        pageCount={pageCount}
+        breakLabel="..."
+        nextLabel="next >"
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+        onPageChange={handlePageClick}
+        containerClassName="pagination"
+      />
     </>
   );
 }
