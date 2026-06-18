@@ -40,11 +40,12 @@ const FetchComment = lazy(() => import("./FetchComment"));
 const FindLargeNumber = lazy(() => import("./FIndLargeNumber"));
 const CountFrequancy = lazy(() => import("./CountFrequancy"));
 const ShowCustomData2 = lazy(() => import("./ShowCustomData2"));
+const FirstNonRepeat = lazy(() => import("./FirstNonRepeat"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <MaterialPegination />
+        <FirstNonRepeat />
       </Suspense>
     </>
   );
