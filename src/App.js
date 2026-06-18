@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FirstNonRepeat />
+        <City />
       </Suspense>
     </>
   );
