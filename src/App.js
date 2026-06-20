@@ -41,11 +41,12 @@ const FindLargeNumber = lazy(() => import("./FIndLargeNumber"));
 const CountFrequancy = lazy(() => import("./CountFrequancy"));
 const ShowCustomData2 = lazy(() => import("./ShowCustomData2"));
 const FirstNonRepeat = lazy(() => import("./FirstNonRepeat"));
+const ZeroLast = lazy(() => import("./ZeroLast"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CountWovel />
+        <ZeroLast />
       </Suspense>
     </>
   );
