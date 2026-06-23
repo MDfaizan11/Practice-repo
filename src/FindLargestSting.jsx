@@ -78,6 +78,28 @@ function FindLargestSting() {
     }
   }
   console.log(smallestString);
+
+  const name = "mohammed shabaz";
+  let num = name.split(" ");
+  let largestString2 = "";
+
+  for (let large of num) {
+    if (large.length > largestString2.length) {
+      largestString2 = large;
+    }
+  }
+  console.log(largestString2);
+
+  function fingLarge(word) {
+    let large = word[0];
+    for (let i = 0; i < word.length; i++) {
+      if (word[i].length > large.length) {
+        large = word[i];
+      }
+    }
+    console.log(large)
+  }
+  fingLarge(num);
   return <div>FindLargestSting</div>;
 }
 
