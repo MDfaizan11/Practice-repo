@@ -1,36 +1,27 @@
+//
 import React from "react";
 
 function ReverseString() {
-  const Myname = "faizan khan";
-  //   const revserse = Myname.split(" ").reverse().join(" ");
-  //   console.log(revserse);  ans == khan faizan
+  let Myname = "mohammed faizan";
+  let newWord = Myname.split(" ");
+  const result = Myname.split(" ").reverse().join(" ");
+  console.log(result);
 
-  //   function reverseString(num) {
-  //     const result = [];
-  //     for (let i = num.length - 1; i >= 0; i--) {
-  //       result.push(num[i]);
-  //     }
-  //     const finalResult = result.join("");
-  //     console.log(finalResult);
-  //   }
-  //   reverseString(Myname);
-
-  function reversedata(num) {
-    const mynum = num.split(" ");
-    console.log(mynum);
-    const result = mynum.map((item) => {
-      return item.split("").reverse().join("");
-    });
+  function reverse(word) {
+    let NewWord = word.split("");
+    console.log(NewWord);
+    const result = [];
+    for (let i = NewWord.length - 1; i >= 0; i--) {
+      result.push(NewWord[i]);
+    }
     console.log(result.join(" "));
   }
-  reversedata(Myname);
+  reverse(Myname);
 
-  let myname = "mohammed faizan";
-  let result = [];
-  for (let i = myname.length - 1; i >= 0; i--) {
-    result.push(myname[i]);
-  }
-  console.log(result.join(""));
+  const finalresult = newWord.map((item) => {
+    return item.split("").reverse().join("");
+  });
+  console.log(finalresult.join(" "));
   return <div>ReverseString</div>;
 }
 

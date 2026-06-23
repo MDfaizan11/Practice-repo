@@ -42,11 +42,13 @@ const CountFrequancy = lazy(() => import("./CountFrequancy"));
 const ShowCustomData2 = lazy(() => import("./ShowCustomData2"));
 const FirstNonRepeat = lazy(() => import("./FirstNonRepeat"));
 const ZeroLast = lazy(() => import("./ZeroLast"));
+const LeanerSearch = lazy(() => import("./LinearSearch"));
+const CheckArrySorted = lazy(() => import("./CheckArrySorted"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <ZeroLast />
+        <CheckArrySorted />
       </Suspense>
     </>
   );
