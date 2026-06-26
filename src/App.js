@@ -48,7 +48,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CheckArrySorted />
+        <FindLargeNumber />
       </Suspense>
     </>
   );

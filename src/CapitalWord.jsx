@@ -35,20 +35,34 @@
 
 // export default CapitalWord;
 
+// import React from "react";
+
+// function CapitalWord() {
+//   const myName = "mohammed faizan";
+//   function CapitalFirstLetter(word) {
+//     let name = word.toLowerCase().split(" ");
+//     console.log(name);
+//     const result = name.map((item) => {
+//       return item.charAt(0).toUpperCase() + item.slice(1);
+//     });
+//     console.log(result.join(" "));
+//   }
+//   CapitalFirstLetter(myName);
+
+//   return <div>CapitalWord</div>;
+// }
+
+// export default CapitalWord;
+
 import React from "react";
 
 function CapitalWord() {
-  const myName = "mohammed faizan";
-  function CapitalFirstLetter(word) {
-    let name = word.toLowerCase().split(" ");
-    console.log(name);
-    const result = name.map((item) => {
-      return item.charAt(0).toUpperCase() + item.slice(1);
-    });
-    console.log(result.join(" "));
-  }
-  CapitalFirstLetter(myName);
-
+  let myname = "mohammed faizan";
+  let name = myname.toLocaleLowerCase().split(" ");
+  const result = name.map((item) => {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  });
+  console.log(result.join(" "));
   return <div>CapitalWord</div>;
 }
 
