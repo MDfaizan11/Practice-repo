@@ -45,6 +45,17 @@ function CheckArrySorted() {
     console.log(result);
   }
   checkfreq(freq);
+
+  function chcksort(arr) {
+    for (let i = 0; i < arr.length -1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
+      }
+      return true;
+    }
+  }
+  const final = chcksort(array);
+  console.log(final);
   return <div>CheckArrySorted</div>;
 }
 

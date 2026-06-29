@@ -71,12 +71,26 @@ import React from "react";
 
 function FindMissElement() {
   const array = [1, 2, 4, 5, 6, 7, 8, 9];
+  const array2 = [1, 2, 4, 5, 6, 7, 9];
 
   const arrayLength = array.length + 1;
   const expectedSum = (arrayLength * (arrayLength + 1)) / 2;
   const originalArraySum = array.reduce((prev, acc) => prev + acc);
   const missedNumber = expectedSum - originalArraySum;
   console.log(missedNumber);
+
+  function findMisstwo(arr) {
+    const set = new Set(arr);
+    console.log(set);
+    let result = [];
+    for (let i = 1; i <= arr.length+2; i++) {
+      if (!set.has(i)) {
+        result.push(i);
+      }
+    }
+    console.log(result)
+  }
+  findMisstwo(array2);
   return <div>FindMissElement</div>;
 }
 

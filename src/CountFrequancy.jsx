@@ -118,6 +118,16 @@ function CountFrequancy() {
   }
   const result = checksort(array);
   console.log(result);
+
+  let myname = "mohammed";
+  function checkfrequancy(num) {
+    let result = {};
+    for (let char of num) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result)
+  }
+  checkfrequancy(myname);
   return <div>CountFrequancy</div>;
 }
 

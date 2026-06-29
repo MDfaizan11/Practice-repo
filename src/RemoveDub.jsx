@@ -101,6 +101,16 @@ function RemoveDub() {
 
   console.log(findDuplicates(array));
 
+  function doubleRemove(arr) {
+    const result = [];
+    for (let num of arr) {
+      if (!result.includes(num)) {
+        result.push(num);
+      }
+    }
+    console.log(result);
+  }
+  doubleRemove(array);
   return <div>RemoveDub</div>;
 }
 
