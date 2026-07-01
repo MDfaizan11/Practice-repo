@@ -162,5 +162,29 @@ export default function CountWovel() {
     console.log(result);
   }
   reome(result);
+
+  const string = "mohammed";
+  let Vowels = ["m", "o", "e", "d"];
+
+  const result2 = string.split("").filter((item, index) => {
+    return Vowels.includes(item);
+  });
+  console.log(result2);
+
+  function dub(word) {
+    const Dubresult = [];
+    for (let char of word) {
+      if (!Dubresult.includes(char)) {
+        Dubresult.push(char);
+      }
+    }
+    console.log(Dubresult);
+  }
+  dub(result2);
+
+  const removeDublicate = result2.filter(
+    (item, index) => result2.indexOf(item) === index,
+  );
+  console.log(removeDublicate);
   return <div>CountWovel</div>;
 }

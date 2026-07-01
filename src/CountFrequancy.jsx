@@ -125,9 +125,20 @@ function CountFrequancy() {
     for (let char of num) {
       result[char] = (result[char] || 0) + 1;
     }
-    console.log(result)
+    console.log(result);
   }
   checkfrequancy(myname);
+
+  let bigname = "mohammedshabaz";
+
+  function Frequancy(name) {
+    const result = {};
+    for (let char of name) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+  }
+  Frequancy(bigname);
   return <div>CountFrequancy</div>;
 }
 

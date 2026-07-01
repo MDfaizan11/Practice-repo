@@ -44,11 +44,13 @@ const FirstNonRepeat = lazy(() => import("./FirstNonRepeat"));
 const ZeroLast = lazy(() => import("./ZeroLast"));
 const LeanerSearch = lazy(() => import("./LinearSearch"));
 const CheckArrySorted = lazy(() => import("./CheckArrySorted"));
+const CustomHook3 = lazy(() => import("./CustomHook3"));
+const Custom3dataShow = lazy(() => import("./Custom3dataShow"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <City />
+        <Custom3dataShow />
       </Suspense>
     </>
   );
