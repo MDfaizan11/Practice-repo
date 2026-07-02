@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import CustomHook3 from "./CustomHook3";
-
+import ReactPaginate from "react-paginate";
 function Custom3dataShow() {
   const { error, loading, data } = CustomHook3(
     "https://jsonplaceholder.typicode.com/comments",
   );
   const [search, setSearch] = useState("");
   const [debouncing, setDebouncing] = useState("");
-
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemPerPage = 15;
+  const endOffset = itemOffset + itemPerPage;
+  const CurrentPageItm = data.slice(itemOffset, endOffset);
+  const PageCount = Math.ceil(data.length / itemPerPage);
   useEffect(() => {
     const debounce = setTimeout(() => {
       setDebouncing(search);
@@ -34,9 +38,21 @@ function Custom3dataShow() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {Fetchdata.map((item) => {
+      {CurrentPageItm.map((item) => {
         return <p>{item.name}</p>;
       })}
+
+      <ReactPaginate
+        nextLabel="next >"
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+        onPageChange={({ selected }) => {
+          const newOffset = selected * itemPerPage;
+          setItemOffset(newOffset);
+        }}
+        containerClassName="pagination"
+        pageCount={PageCount}
+      />
     </>
   );
 }
