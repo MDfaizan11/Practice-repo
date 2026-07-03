@@ -83,14 +83,35 @@ function FindMissElement() {
     const set = new Set(arr);
     console.log(set);
     let result = [];
-    for (let i = 1; i <= arr.length+2; i++) {
+    for (let i = 1; i <= arr.length + 2; i++) {
       if (!set.has(i)) {
         result.push(i);
       }
     }
-    console.log(result)
+    console.log(result);
   }
   findMisstwo(array2);
+
+  const newNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9,10, 12];
+
+  const NewArrayLength = newNumber.length + 1;
+  const AccepectedLength = (NewArrayLength * (NewArrayLength + 1)) / 2;
+  const actualLength = newNumber.reduce((prev, curr) => curr + prev, 0);
+  const result = AccepectedLength - actualLength;
+  console.log(result);
+
+  function findTwoMissNumber(num) {
+    const max = Math.max(...num);
+    const result = [];
+    for (let i = 1; i <= max; i++) {
+      if (!num.includes(i)) {
+        result.push(i);
+      }
+    }
+    console.log(result);
+  }
+
+  findTwoMissNumber(newNumber);
   return <div>FindMissElement</div>;
 }
 

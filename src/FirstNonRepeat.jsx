@@ -37,6 +37,49 @@ function FirstNonRepeat() {
   }
 
   console.log(secondNonRepeated("I love coding"));
+
+  const myName = "aabbcceddf";
+
+  function FirstNonRepeat(word) {
+    const result = {};
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let first of word) {
+      if (result[first] === 1) {
+        console.log(first);
+        return first;
+      }
+    }
+  }
+  FirstNonRepeat(myName);
+
+  const myName2 = "aabbcceddf";
+
+  function secondNonRepeat(word) {
+    const result = {};
+    let count = 0;
+
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+
+    for (let char of word) {
+      if (result[char] === 1) {
+        count++;
+
+        if (count === 2) {
+          console.log(char);
+          return char;
+        }
+      }
+    }
+    return null;
+  }
+
+  console.log(secondNonRepeat(myName2));
   return <div>FirstNonRepeat</div>;
 }
 

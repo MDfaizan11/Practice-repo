@@ -135,6 +135,23 @@ function FindLargestSting() {
   }
   console.log(smallest);
 
+  const myName = "mohammed faizan";
+  const num = myName.split(" ");
+  let largestesString = "";
+  for (let large of num) {
+    if (large.length > largestesString.length) {
+      largestesString = large;
+    }
+  }
+  console.log(largestesString);
+
+  let smallestString = num[0];
+  for (let small of num) {
+    if (small < smallestString) {
+      smallestString = small;
+    }
+  }
+  console.log(smallestString);
   return <div>FindLargestSting</div>;
 }
 

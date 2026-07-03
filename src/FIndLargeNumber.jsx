@@ -87,6 +87,22 @@ function FIndLargeNumber() {
     }
   }
   console.log(largest);
+
+  let largestestNumer = number[0];
+  for (let large of number) {
+    if (large > largestestNumer) {
+      largestestNumer = large;
+    }
+  }
+  console.log(largestestNumer);
+
+  let smallestNumber = number[0];
+  for (let small of number) {
+    if (small < smallestNumber) {
+      smallestNumber = small;
+    }
+  }
+  console.log(smallestNumber);
   return <div>FIndLargeNumber</div>;
 }
 

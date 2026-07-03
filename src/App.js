@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Custom3dataShow />
+        <FirstNonRepeat />
       </Suspense>
     </>
   );
