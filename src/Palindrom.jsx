@@ -74,6 +74,19 @@ function Palindrom() {
     return result;
   }
   chekbyLoop(name);
+
+  const Myname = "madam";
+  function palindromByLoop(word) {
+    const name = word.toLowerCase();
+    const result = [];
+    for (let i = word.length - 1; i >= 0; i--) {
+      result.push(word[i]);
+    }
+    console.log(result.join(""));
+    const finalResult = name === result.join("");
+    console.log(finalResult);
+  }
+  palindromByLoop(Myname);
   return <div>Palindrom</div>;
 }
 
