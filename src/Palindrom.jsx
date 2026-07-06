@@ -87,6 +87,19 @@ function Palindrom() {
     console.log(finalResult);
   }
   palindromByLoop(Myname);
+
+  const num = "mum";
+  function findPalindrom(num) {
+    const newNum = num.toLowerCase();
+    const result = [];
+    for (let i = num.length - 1; i >= 0; i--) {
+      result.push(num[i]);
+    }
+
+    const finalResult = newNum === result.join("");
+    console.log(finalResult);
+  }
+  findPalindrom(num);
   return <div>Palindrom</div>;
 }
 

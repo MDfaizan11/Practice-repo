@@ -111,6 +111,40 @@ function RemoveDub() {
     console.log(result);
   }
   doubleRemove(array);
+
+  const numberDub = [1, 1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 9];
+
+  const dubresult = numberDub.filter(
+    (item, index) => numberDub.indexOf(item) === index,
+  );
+  console.log(dubresult);
+
+  function FindDub(number) {
+    const result = [];
+
+    for (let dub of number) {
+      if (!result.includes(dub)) {
+        result.push(dub);
+      }
+    }
+    console.log(result);
+  }
+  FindDub(numberDub);
+
+  function findTwoDub(num) {
+    const count = {};
+    const Dublicates = [];
+
+    for (let dub of num) {
+      count[dub] = (count[dub] || 0) + 1;
+      if (count[dub] === 2) {
+        Dublicates.push(dub);
+      }
+    }
+
+    console.log(Dublicates);
+  }
+  findTwoDub(numberDub);
   return <div>RemoveDub</div>;
 }
 

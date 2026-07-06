@@ -22,6 +22,19 @@ function ReverseString() {
     return item.split("").reverse().join("");
   });
   console.log(finalresult.join(" "));
+
+  const word = "mohammed faizan";
+
+  function reverse2(word) {
+    const newWord = word.split("");
+    const result = [];
+    for (let i = newWord.length - 1; i >= 0; i--) {
+      result.push(newWord[i]);
+    }
+
+    console.log(result.join(""));
+  }
+  reverse2(word);
   return <div>ReverseString</div>;
 }
 
