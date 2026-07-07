@@ -139,6 +139,44 @@ function CountFrequancy() {
     console.log(result);
   }
   Frequancy(bigname);
+
+  const bigName = "aabbccop";
+
+  function checkNew(word) {
+    const result = {};
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    for (let num of word) {
+      if (result[num] === 1) {
+        console.log(num);
+        return num;
+      }
+    }
+    console.log(result);
+  }
+  checkNew(bigName);
+
+  function secoundNon(word) {
+    const result = {};
+    let count = 0;
+
+    for (let chr of word) {
+      result[chr] = (result[chr] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let secound of word) {
+      if (result[secound] === 1) {
+        count++;
+        if (count === 2) {
+          console.log(secound);
+          return secound;
+        }
+      }
+    }
+  }
+  secoundNon(bigName);
   return <div>CountFrequancy</div>;
 }
 
