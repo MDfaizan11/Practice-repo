@@ -126,10 +126,27 @@ function FileUplode() {
     if (!NewFile) {
       alert("file required");
     }
-    // const fileExtention =[
+    const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
 
-    // ]
+    if (!allowedTypes.includes(NewFile.type)) {
+      return alert("Only JPG, PNG and PDF files are allowed");
+    }
 
+    // Max size: 2 MB
+    const maxSize = 2 * 1024 * 1024;
+
+    if (NewFile.size > maxSize) {
+      return alert("File size must be less than 2 MB");
+    }
+
+    const obj = {
+      name: newName,
+      email: newEmail,
+      number: newNumber,
+      file: NewFile.name,
+    };
+    localStorage.setItem("files2", JSON.stringify(obj));
+    alert("Data added successfully");
   };
   return (
     <>

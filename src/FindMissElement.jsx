@@ -92,7 +92,7 @@ function FindMissElement() {
   }
   findMisstwo(array2);
 
-  const newNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9,10, 12];
+  const newNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12];
 
   const NewArrayLength = newNumber.length + 1;
   const AccepectedLength = (NewArrayLength * (NewArrayLength + 1)) / 2;
@@ -112,6 +112,21 @@ function FindMissElement() {
   }
 
   findTwoMissNumber(newNumber);
+
+  const findTwo = [1, 3, 5, 6, 7, 9];
+
+  function twoFind(arr) {
+    const maxValue = Math.max(...arr);
+    const result = [];
+
+    for (let i = 1; i <= maxValue; i++) {
+      if (!arr.includes(i)) {
+        result.push(i);
+      }
+    }
+    console.log(result);
+  }
+  twoFind(findTwo);
   return <div>FindMissElement</div>;
 }
 

@@ -100,6 +100,19 @@ function CheckArrySorted() {
   }
   const final = checkArry(newarr);
   console.log(final);
+
+  const arraydata = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function checkdata(data) {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] > data[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  const finaldata = checkdata(arraydata);
+  console.log(finaldata);
   return <div>CheckArrySorted</div>;
 }
 
