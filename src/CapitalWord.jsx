@@ -88,6 +88,15 @@ function CapitalWord() {
   }
   capital(myname);
 
+  const word = "mohammed faizan";
+
+  const result2 = word
+    .toLowerCase()
+    .split(" ")
+    .map((item) => {
+      return item.charAt(0).toUpperCase() + item.slice(1);
+    });
+  console.log(result2.join(" "));
   return <div>CapitalWord</div>;
 }
 

@@ -127,6 +127,28 @@ function FindMissElement() {
     console.log(result);
   }
   twoFind(findTwo);
+
+  const num = [1, 2, 3, 4, 5, 7, 9];
+
+  // const inCreaseLength = num.length + 1;
+  // const expectedSum2 = (inCreaseLength * (inCreaseLength + 1)) / 2;
+  // const accutalSum2 = num.reduce((prev, curr) => curr + prev, 0);
+  // const missNum = expectedSum2 - accutalSum2;
+  // console.log(missNum);
+
+  function twoMissNumber(num) {
+    const maxNum = Math.max(...num);
+    const result = [];
+
+    for (let i = 1; i <= maxNum; i++) {
+      if (!num.includes(i)) {
+        result.push(i);
+      }
+    }
+
+    console.log(result);
+  }
+  twoMissNumber(num);
   return <div>FindMissElement</div>;
 }
 

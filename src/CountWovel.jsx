@@ -186,5 +186,43 @@ export default function CountWovel() {
     (item, index) => result2.indexOf(item) === index,
   );
   console.log(removeDublicate);
+
+  let imran = "mohamed";
+  let imranVowel = ["m", "o", "d"];
+
+  function findImran(word) {
+    let count = 0;
+    for (let char of word) {
+      if (imranVowel.includes(char)) {
+        count++;
+        // console.log(count);
+      }
+    }
+    console.log(count);
+    return count;
+  }
+  findImran(imran);
+
+  const num = "shabaz";
+  let vol = ["s", "h", "a"];
+  const numResult = num.split("").filter((item) => vol.includes(item));
+  console.log(numResult);
+  const numResult2 = numResult.filter(
+    (item, index) => numResult.indexOf(item) === index,
+  );
+  console.log(numResult2);
+
+  function volByLoop(word) {
+    const newWord = word.split("");
+    let result = [];
+    for (let char of newWord) {
+      if (vol.includes(char) && !result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result);
+  }
+  volByLoop(num);
+
   return <div>CountWovel</div>;
 }

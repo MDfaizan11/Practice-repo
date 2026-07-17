@@ -113,6 +113,19 @@ function CheckArrySorted() {
   }
   const finaldata = checkdata(arraydata);
   console.log(finaldata);
+
+  const arr = [1, 2, 3, 4, 5, 85, 7, 8, 9];
+  function check(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  const answer = check(arr);
+  console.log(answer);
   return <div>CheckArrySorted</div>;
 }
 

@@ -103,6 +103,16 @@ function FIndLargeNumber() {
     }
   }
   console.log(smallestNumber);
+
+  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  let lar = num[0];
+  for (let large of num) {
+    if (large > lar) {
+      lar = large;
+    }
+  }
+  console.log(lar);
   return <div>FIndLargeNumber</div>;
 }
 

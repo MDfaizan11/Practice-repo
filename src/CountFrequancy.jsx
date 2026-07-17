@@ -177,6 +177,55 @@ function CountFrequancy() {
     }
   }
   secoundNon(bigName);
+
+  const NewWord = "aabbcced";
+
+  function fre(word) {
+    const result = {};
+    let count = 0;
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    // for (let first of word) {
+    //   if (result[first] === 1) {
+    //     console.log(first);
+    //     return first;
+    //   }
+    // }
+
+    for (let firstWord of word) {
+      if (result[firstWord] === 1) {
+        count++;
+        if (count === 2) {
+          console.log(firstWord);
+          return firstWord;
+        }
+      }
+    }
+  }
+  fre(NewWord);
+
+  const name3 = "aabbccddep";
+  function fre2(word) {
+    const result = {};
+    let count = 0;
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let num of word) {
+      if (result[num] === 1) {
+        count++;
+        if (count === 2) {
+          console.log(num);
+        }
+      }
+    }
+  }
+  fre2(name3);
   return <div>CountFrequancy</div>;
 }
 
