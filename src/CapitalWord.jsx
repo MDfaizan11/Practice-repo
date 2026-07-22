@@ -97,6 +97,18 @@ function CapitalWord() {
       return item.charAt(0).toUpperCase() + item.slice(1);
     });
   console.log(result2.join(" "));
+
+  let n = "shoyeb khan";
+
+  function cap(word) {
+    let newword = word.toLowerCase().split(" ");
+
+    const result = newword.map((item) => {
+      return item.charAt(0).toUpperCase() + item.slice(1);
+    });
+    console.log(result.join(" "));
+  }
+  cap(n);
   return <div>CapitalWord</div>;
 }
 

@@ -126,7 +126,19 @@ function CheckArrySorted() {
 
   const answer = check(arr);
   console.log(answer);
+
+  let number = [1, 2, 3, 4, 5, 6];
+
+  function ch(number) {
+    for (let i = 0; i < number.length; i++) {
+      if (number[i] > number[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  const r = ch(number);
+  console.log(r);
   return <div>CheckArrySorted</div>;
 }
-
 export default CheckArrySorted;

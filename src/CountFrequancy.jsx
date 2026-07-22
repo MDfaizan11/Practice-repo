@@ -226,6 +226,23 @@ function CountFrequancy() {
     }
   }
   fre2(name3);
+
+  const name4 = "aabbccddeefg";
+  function f(word) {
+    const result = {};
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let charOne of word) {
+      if (result[charOne] === 1) {
+        console.log(charOne);
+        return;
+      }
+    }
+  }
+  f(name4);
   return <div>CountFrequancy</div>;
 }
 
