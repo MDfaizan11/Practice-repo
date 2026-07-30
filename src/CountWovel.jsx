@@ -224,5 +224,24 @@ export default function CountWovel() {
   }
   volByLoop(num);
 
+  const string1 = "faizan";
+  const Vowel1 = ["f", "z", "i", "a"];
+
+  const result4 = string1
+    .split("")
+    .filter((item, index) => Vowel1.includes(item));
+  console.log(result4.join("").length);
+
+  function CountWovel1(word) {
+    const result = [];
+    const newWord = word.split("");
+    for (let char of newWord) {
+      if (Vowel1.includes(char) && !result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result.length);
+  }
+  CountWovel1(string1);
   return <div>CountWovel</div>;
 }

@@ -243,6 +243,24 @@ function CountFrequancy() {
     }
   }
   f(name4);
+
+  const newWord = "aaddeervvl";
+
+  function freq1(word) {
+    const result = {};
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let unique of word) {
+      if (result[unique] === 1) {
+        console.log(unique);
+        return;
+      }
+    }
+  }
+  freq1(newWord);
   return <div>CountFrequancy</div>;
 }
 
