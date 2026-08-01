@@ -55,7 +55,7 @@ function RemoveDub() {
   const result = [...new Set(array)];
   console.log(result);
 
-  const result2 = array.filter((item, index) => array.indexOf(item) === index);
+  const result2 = array.filter((item, index) => array.indexOf(item) !== index);
   console.log(result2);
 
   function removeDub(num) {
@@ -145,6 +145,32 @@ function RemoveDub() {
     console.log(Dublicates);
   }
   findTwoDub(numberDub);
+
+  const DunlicateWord = "aabcdef";
+  function removeDublicateString(word) {
+    const result = [];
+    const result2 = {};
+    const newWord = word.split("");
+    for (let dub of newWord) {
+      if (!result.includes(dub)) {
+        result.push(dub);
+      }
+    }
+    console.log(result.join(""));
+
+    for (let char of newWord) {
+      result2[char] = (result2[char] || 0) + 1;
+    }
+    console.log(result2);
+
+    for (let dub of newWord) {
+      if (result2[dub] === 2) {
+        console.log(dub);
+        return;
+      }
+    }
+  }
+  removeDublicateString(DunlicateWord);
   return <div>RemoveDub</div>;
 }
 
