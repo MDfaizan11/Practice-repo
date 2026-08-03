@@ -120,6 +120,27 @@ function ZeroLast() {
   }
   lastZero2(array);
 
+  const arr1 = [1, 2, 3, 0, 4, 8, 0, 9, 0];
+
+  function lastZero3(arr) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    console.log(result);
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+        result.push(arr[i]);
+      }
+    }
+
+    console.log(result);
+  }
+
+  lastZero3(arr1);
   return <div>ZeroLast</div>;
 }
 

@@ -52,7 +52,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FlattenArray />
+        <ZeroLast />
       </Suspense>
     </>
   );
