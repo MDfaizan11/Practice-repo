@@ -261,6 +261,31 @@ function CountFrequancy() {
     }
   }
   freq1(newWord);
+
+  const word1 = 12345669988;
+
+  function findFrequancy(word) {
+    // const newWord = word.split(" ");
+    const result = {};
+    let count = 0;
+    const newWord = word.toString();
+    for (let char of newWord) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let dub of newWord) {
+      if (result[dub] > 1) {
+        count++;
+        if (count === 2) {
+          console.log(dub);
+          return;
+        }
+      }
+    }
+  }
+  findFrequancy(word1);
+
   return <div>CountFrequancy</div>;
 }
 

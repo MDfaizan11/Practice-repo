@@ -116,6 +116,9 @@ function City() {
   const [City, setCity] = useState([]);
   const [selectcountry, setSelectcountry] = useState([]);
   const [myCity, setMyCity] = useState([]);
+
+  const [newCountry, setNewCountry] = useState([]);
+  const [newCity, setNewCity] = useState([]);
   const countries = [
     {
       id: 1,
@@ -251,6 +254,22 @@ function City() {
       setMyCity([]);
     }
   }
+
+  function handleCountryChange(e) {
+    console.log(e.target.value);
+    const selected = Number(e.target.value);
+    console.log(selected);
+    setNewCountry(selected);
+
+    const city = countries.find((item, index) => item.id === selected);
+    console.log(city);
+    setMyCity(city ? city.cities : []);
+  }
+
+  function handleSelectCity(e) {
+    const cityName = e.target.value;
+    setMyCity(cityName);
+  }
   return (
     <>
       <p>City</p>
@@ -310,6 +329,36 @@ function City() {
               );
             })
           : "no city found"}
+      </select>
+
+      <select name="" id="" value={newCountry} onChange={handleCountryChange}>
+        <option value="">select Country</option>
+        {countries.map((item, index) => {
+          return (
+            <>
+              <option value={item.id} key={item.id}>
+                {item.country}
+              </option>
+            </>
+          );
+        })}
+      </select>
+
+      <select
+        name=""
+        id=""
+        disabled={!myCity}
+        value={City}
+        onChange={handleSelectCity}
+      >
+        <option value="">select City</option>
+        {myCity.map((item, inde) => {
+          return (
+            <>
+              <option value="">{item}</option>
+            </>
+          );
+        })}
       </select>
     </>
   );
