@@ -48,11 +48,13 @@ const CustomHook3 = lazy(() => import("./CustomHook3"));
 const Custom3dataShow = lazy(() => import("./Custom3dataShow"));
 const MergeArray = lazy(() => import("./MergeTwoArray"));
 const FlattenArray = lazy(() => import("./FlattenArray"));
+const NewCustomHookData = lazy(() => import("./NewCustomHookData"));
+const NewCustomHook = lazy(() => import("./NewCustomHook"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CountFrequancy />
+        <FindMissElement />
       </Suspense>
     </>
   );

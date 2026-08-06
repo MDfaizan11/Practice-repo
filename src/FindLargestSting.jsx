@@ -152,6 +152,22 @@ function FindLargestSting() {
     }
   }
   console.log(smallestString);
+
+  const string1 = "mohammed faizan khannnnnn";
+  let SplitName = string1.split(" ");
+  let longest = "";
+  let SecondLargest = "";
+  for (let long of SplitName) {
+    if (long.length > longest.length) {
+      SecondLargest = longest;
+      longest = long;
+    } else if (long.length > SecondLargest.length) {
+      SecondLargest = long;
+    }
+  }
+  console.log(longest);
+  console.log(SecondLargest);
+
   return <div>FindLargestSting</div>;
 }
 

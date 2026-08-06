@@ -243,5 +243,19 @@ export default function CountWovel() {
     console.log(result.length);
   }
   CountWovel1(string1);
+
+  const string2 = "faizan";
+  const Wowel = ["f", "z", "n", "a"];
+
+  function findWovel(word) {
+    const result = [];
+    for (let char of word) {
+      if (Wowel.includes(char) && !result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result.length);
+  }
+  findWovel(string2);
   return <div>CountWovel</div>;
 }

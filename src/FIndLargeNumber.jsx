@@ -113,6 +113,24 @@ function FIndLargeNumber() {
     }
   }
   console.log(lar);
+
+  const Number1 = [1, 2, 3, 4, 5, 6];
+  let large = Number1[0];
+  for (let long of Number1) {
+    if (long > large) {
+      large = long;
+    }
+  }
+  console.log(large);
+
+  let small = Number1[0];
+  for (let smallest of Number1) {
+    if (smallest < small) {
+      small = smallest;
+    }
+  }
+  console.log(small);
+
   return <div>FIndLargeNumber</div>;
 }
 

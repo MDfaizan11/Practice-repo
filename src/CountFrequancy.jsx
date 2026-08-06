@@ -274,13 +274,9 @@ function CountFrequancy() {
     }
     console.log(result);
 
-    for (let dub of newWord) {
-      if (result[dub] > 1) {
-        count++;
-        if (count === 2) {
-          console.log(dub);
-          return;
-        }
+    for (let first of newWord) {
+      if (result[first] > 1) {
+        console.log(first);
       }
     }
   }

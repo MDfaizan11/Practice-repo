@@ -149,6 +149,25 @@ function FindMissElement() {
     console.log(result);
   }
   twoMissNumber(num);
+
+  const num1 = [1, 2, 3, 4, 5, 6, 9];
+  let expectedLength  = num1.length + 1;
+  const expectedSum1  = (expectedLength * (expectedLength + 1)) / 2;
+  const actualSum  = num1.reduce((prev, curr) => curr + prev);
+  const result1 = expectedSum1 - actualSum;
+  console.log(result1);
+
+  function TwoMiss(arr) {
+    const maxinumLength = Math.max(...arr);
+    const result = [];
+    for (let i = 1; i <= maxinumLength; i++) {
+      if (!arr.includes(i)) {
+        result.push(i);
+      }
+    }
+    console.log(result);
+  }
+  TwoMiss(num1);
   return <div>FindMissElement</div>;
 }
 
