@@ -34,6 +34,20 @@ function FlattenArray() {
   }
   flatrray(arr1);
 
+  const arr2 = [1, [2, 3, [4, 5]]];
+  function flat(arr) {
+    const result = [];
+    for (let num of arr) {
+      if (Array.isArray(num)) {
+        result.push(...flat(num));
+      } else {
+        result.push(num);
+      }
+    }
+    console.log(result);
+    return result;
+  }
+  flat(arr2);
   return <div>FlattenArray</div>;
 }
 

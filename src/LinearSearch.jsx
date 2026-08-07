@@ -29,6 +29,19 @@ function LinearSearch() {
   }
   const result2 = SearchLinear(array2, target2);
   console.log(result2);
+
+  const array3 = [10, 20, 40, 60, 90];
+  let target3 = 90;
+  function CheckLiner(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return true;
+      }
+    }
+    return false;
+  }
+  const result3 = CheckLiner(array3, target3);
+  console.log(result3);
   return <div>LinearSearch</div>;
 }
 

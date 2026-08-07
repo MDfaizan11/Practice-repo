@@ -80,6 +80,22 @@ function FirstNonRepeat() {
   }
 
   console.log(secondNonRepeat(myName2));
+
+  let word1 = "aabbccsd";
+  function firstNon(word) {
+    const result = {};
+
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    for (let newWord of word) {
+      if (result[newWord] > 1) {
+        console.log(newWord);
+      }
+    }
+    console.log(result);
+  }
+  firstNon(word1);
   return <div>FirstNonRepeat</div>;
 }
 

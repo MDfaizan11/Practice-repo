@@ -54,7 +54,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindMissElement />
+        <LeanerSearch />
       </Suspense>
     </>
   );
