@@ -50,11 +50,14 @@ const MergeArray = lazy(() => import("./MergeTwoArray"));
 const FlattenArray = lazy(() => import("./FlattenArray"));
 const NewCustomHookData = lazy(() => import("./NewCustomHookData"));
 const NewCustomHook = lazy(() => import("./NewCustomHook"));
+const CompairTwoString = lazy(() => import("./CompairTwoString"));
+const Toggle = lazy(() => import("./Toggle"));
+const FindProduct = lazy(() => import("./FindProduct"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <MatrialPegination />
+        <CompairTwoString />
       </Suspense>
     </>
   );

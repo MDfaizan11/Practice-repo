@@ -165,6 +165,12 @@ function CheckArrySorted() {
   }
   const result1 = checkArry1(arr2);
   console.log(result1);
+
+  const arr3 = [1, 2, 3, 4, 5];
+  const arr4 = [9, 6, 8, 7];
+  const result2 = [...arr3, ...arr4].sort((a, b) => a - b);
+  console.log(result2);
+
   return <div>CheckArrySorted</div>;
 }
 export default CheckArrySorted;

@@ -100,6 +100,20 @@ function Palindrom() {
     console.log(finalResult);
   }
   findPalindrom(num);
+
+  const word1 = "ABCCBA";
+  function findPalim(word) {
+    const newWord1 = word.toLowerCase();
+    const result = [];
+    for (let i = newWord1.length - 1; i >= 0; i--) {
+      result.push(newWord1[i]);
+    }
+    console.log(result);
+    const final = newWord1 === result.join("");
+    console.log(final);
+    return result;
+  }
+  findPalim(word1);
   return <div>Palindrom</div>;
 }
 

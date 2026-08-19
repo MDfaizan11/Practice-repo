@@ -131,6 +131,51 @@ function FIndLargeNumber() {
   }
   console.log(small);
 
+  const num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  let largestnum = num1[0];
+  let secoundLarge = num1[0];
+  for (let largee of num1) {
+    if (largee > largestnum) {
+      secoundLarge = largestnum;
+      largestnum = largee;
+    } else if (secoundLarge > largee) {
+      secoundLarge = largee;
+    }
+  }
+  console.log(largestnum);
+  console.log(secoundLarge);
+
+  let smallestnum = num1[0];
+  let secoundSmallestnum = Infinity;
+
+  for (let small of num1) {
+    if (small < smallestnum) {
+      secoundSmallestnum = smallestnum;
+      smallestnum = small;
+    } else if (small < secoundSmallestnum && small !== smallestnum) {
+      secoundSmallestnum = small;
+    }
+  }
+
+  console.log("Smallest:", smallestnum);
+  console.log("Second smallest:", secoundSmallestnum);
+
+  const luckey = [1, 1, 2, 3];
+  function findLuckey(number) {
+    const result = {};
+
+    for (let num of number) {
+      result[num] = (result[num] || 0) + 1;
+    }
+    console.log(result);
+    for (let luck of number) {
+      if (result[luck] === 2) {
+        console.log(luck);
+      }
+    }
+  }
+  findLuckey(luckey);
+
   return <div>FIndLargeNumber</div>;
 }
 

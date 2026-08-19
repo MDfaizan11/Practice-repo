@@ -171,6 +171,26 @@ function RemoveDub() {
     }
   }
   removeDublicateString(DunlicateWord);
+
+  const arr1 = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function removed(arr) {
+    const result = {};
+    const dublicate = [];
+    for (let num of arr) {
+      result[num] = (result[num] || 0) + 1;
+    }
+    console.log(result);
+    for (let dub of arr) {
+      if (result[dub] > 1) {
+        console.log(dub);
+        dublicate.push(dub);
+      }
+    }
+    console.log(dublicate);
+    return { result, dublicate };
+  }
+  removed(arr1);
   return <div>RemoveDub</div>;
 }
 
