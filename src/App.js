@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CompairTwoString />
+        <CountWovel />
       </Suspense>
     </>
   );

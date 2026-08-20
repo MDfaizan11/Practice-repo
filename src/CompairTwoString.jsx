@@ -62,7 +62,36 @@ function CompairTwoString() {
   }
   console.log(checkString(str3, str4));
 
- 
+  let str5 = "shabaz";
+  let str6 = "faizan";
+
+  function stringCheck(str5, str6) {
+    let word1 = str5.toLowerCase();
+    let word2 = str6.toLowerCase();
+    let count1 = {};
+    let count2 = {};
+    if (word1.length !== word2.length) {
+      console.log(false);
+    }
+
+    for (let chr of word1) {
+      count1[chr] = (count1[chr] || 0) + 1;
+    }
+
+    console.log(count1);
+    for (let chr2 of word2) {
+      count2[chr2] = (count2[chr2] || 0) + 1;
+    }
+    console.log(count2);
+
+    for (let key of word1) {
+      if (count1[key] !== count2[key]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(stringCheck(str5, str6));
   return <div>CompairTwoString</div>;
 }
 

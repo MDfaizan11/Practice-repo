@@ -282,6 +282,24 @@ function CountFrequancy() {
   }
   findFrequancy(word1);
 
+  const myNewname = "faizann";
+  function Namefre(word) {
+    const result = {};
+    let repeatchar = [];
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+
+    for (let repeat of word) {
+      if (result[repeat] > 1 && !repeatchar.includes(repeat)) {
+        repeatchar.push(repeat);
+      }
+    }
+
+    console.log(repeatchar.join(" ,"));
+  }
+  Namefre(myNewname);
   return <div>CountFrequancy</div>;
 }
 

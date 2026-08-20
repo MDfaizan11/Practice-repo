@@ -171,6 +171,18 @@ function CheckArrySorted() {
   const result2 = [...arr3, ...arr4].sort((a, b) => a - b);
   console.log(result2);
 
+  const arr5 = [1, 2, 3, 4, 5, 6];
+
+  function arrcheck(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(arrcheck(arr5));
+
   return <div>CheckArrySorted</div>;
 }
 export default CheckArrySorted;

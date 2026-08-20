@@ -257,5 +257,21 @@ export default function CountWovel() {
     console.log(result.length);
   }
   findWovel(string2);
+
+  const name5 = "faizan";
+  let Name5Vowel = ["f", "i", "a"];
+
+  function findName5Vowel(word) {
+    const words = word.split("");
+    console.log(words);
+    const result = [];
+    for (let char of words) {
+      if (Name5Vowel.includes(char) && !result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result);
+  }
+  findName5Vowel(name5);
   return <div>CountWovel</div>;
 }
