@@ -53,11 +53,13 @@ const NewCustomHook = lazy(() => import("./NewCustomHook"));
 const CompairTwoString = lazy(() => import("./CompairTwoString"));
 const Toggle = lazy(() => import("./Toggle"));
 const FindProduct = lazy(() => import("./FindProduct"));
+const CustomHook1 = lazy(() => import("./CustomHook1"));
+const CustomHook1Data = lazy(() => import("./CustomHook1Data"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CountWovel />
+        <CustomHook1 />
       </Suspense>
     </>
   );

@@ -109,7 +109,7 @@ import React, { useEffect, useState } from "react";
 
 function Debouncing() {
   const [search, setSearch] = useState("");
-  const [debouncing, setDebouncing] = useState([]);
+  const [debouncing, setDebouncing] = useState("");
   const Names = [
     "Anil",
     "Sunil",
@@ -124,19 +124,16 @@ function Debouncing() {
   ];
 
   useEffect(() => {
-    let debouncingData = setTimeout(() => {
-      if (!search) {
-        setDebouncing(Names);
-      } else {
-        let filter = Names.filter((name) => {
-          return name.toLowerCase().includes(search.toLowerCase());
-        });
-        setDebouncing(filter);
-      }
+    const debouncFilter = setTimeout(() => {
+      setDebouncing(search);
     }, 1000);
 
-    return () => clearTimeout(debouncingData);
-  }, [search]);
+    return () => clearTimeout(debouncFilter);
+  }, [search, debouncing]);
+
+  const seachData = Names.filter((item) => {
+    return item.toLowerCase().includes(debouncing.toLowerCase());
+  });
   return (
     <>
       <p>Debouncing</p>
@@ -145,17 +142,14 @@ function Debouncing() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      {debouncing.length > 0
-        ? debouncing.map((item) => {
-            return (
-              <>
-                <ul>
-                  <li>{item}</li>
-                </ul>
-              </>
-            );
-          })
-        : "no data found"}
+      <ul>
+        {seachData.length > 0
+          ? seachData.map((item) => {
+              return <li>{item}</li>;
+            })
+          : "No name avaible"}
+      </ul>
+      {}
     </>
   );
 }
