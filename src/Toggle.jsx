@@ -22,29 +22,31 @@ function Toggle() {
     },
   ];
 
-  function handleShowSubCategory(id) {
+  function hanldeSubData(id) {
     console.log(id);
     setCategory((prev) => (prev === id ? null : id));
   }
   return (
     <div>
       show data
-      {data.map((item, index) => {
-        return (
-          <>
-            <div key={item.id}>
-              <p>{item.name}</p>
-              <button onClick={() => handleShowSubCategory(item.id)}>
-                Show data
-              </button>
-              {subcategory === item.id &&
-                item.subcategories.map((item) => {
-                  return <p>{item.name}</p>;
-                })}
-            </div>
-          </>
-        );
-      })}
+      {data.length > 0
+        ? data.map((item) => {
+            return (
+              <div key={item.id}>
+                <p> {item.name}</p>
+                <button onClick={() => hanldeSubData(item.id)}>Sub data</button>
+                {subcategory === item.id &&
+                  item.subcategories.map((sub) => {
+                    return (
+                      <div key={sub.id}>
+                        <p>{sub.name}</p>
+                      </div>
+                    );
+                  })}
+              </div>
+            );
+          })
+        : "no data Availble"}
     </div>
   );
 }

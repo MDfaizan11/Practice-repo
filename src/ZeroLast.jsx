@@ -141,6 +141,26 @@ function ZeroLast() {
   }
 
   lastZero3(arr1);
+
+  const arr2 = [1, 0, 2, 3, 4, 0, 5, 6, 0, 7];
+  function lastZero4(num) {
+    const result = [];
+
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] !== 0) {
+        result.push(num[i]);
+      }
+    }
+
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] === 0) {
+        result.push(num[i]);
+      }
+    }
+
+    console.log(result);
+  }
+  lastZero4(arr2);
   return <div>ZeroLast</div>;
 }
 
