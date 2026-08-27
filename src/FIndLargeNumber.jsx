@@ -176,6 +176,23 @@ function FIndLargeNumber() {
   }
   findLuckey(luckey);
 
+  const arr1 = [8, 5, 7, 9, 6, 3];
+  let largestEle = arr1[0];
+  let SecoundLargestELe = Infinity;
+  function findlargestArr1(arr) {
+    for (let large of arr) {
+      if (large > largestEle) {
+        SecoundLargestELe = largestEle;
+        largestEle = large;
+      } else if (large > SecoundLargestELe) {
+        SecoundLargestELe = large;
+      }
+    }
+  }
+  findlargestArr1(arr1);
+  console.log(largestEle);
+  console.log(SecoundLargestELe);
+
   return <div>FIndLargeNumber</div>;
 }
 
