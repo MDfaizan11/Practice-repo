@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 function Toggle() {
-  const [subcategory, setCategory] = useState(null);
-
+  const [itemId, setItemId] = useState("");
   const data = [
     {
       id: 1,
@@ -22,31 +21,32 @@ function Toggle() {
     },
   ];
 
-  function hanldeSubData(id) {
+  function handleShowData(id) {
     console.log(id);
-    setCategory((prev) => (prev === id ? null : id));
+    setItemId((prev) => (prev === id ? null : id));
   }
+
   return (
     <div>
       show data
-      {data.length > 0
-        ? data.map((item) => {
-            return (
-              <div key={item.id}>
-                <p> {item.name}</p>
-                <button onClick={() => hanldeSubData(item.id)}>Sub data</button>
-                {subcategory === item.id &&
-                  item.subcategories.map((sub) => {
-                    return (
-                      <div key={sub.id}>
-                        <p>{sub.name}</p>
-                      </div>
-                    );
-                  })}
-              </div>
-            );
-          })
-        : "no data Availble"}
+      {data.map((item, index) => {
+        return (
+          <div>
+            <p>{item.name}</p>
+            <button onClick={() => handleShowData(item.id)}>
+              {itemId === item.id ? "close" : "open"}
+            </button>
+            {itemId === item.id &&
+              item.subcategories.map((sub) => {
+                return (
+                  <div>
+                    <p>{sub.name}</p>
+                  </div>
+                );
+              })}
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -119,32 +119,31 @@ function StopWatch() {
 
   useEffect(() => {
     if (!running) return;
-    const run = setInterval(() => {
+    const timer = setInterval(() => {
       setTime(time + 1);
     }, 1000);
-
-    return () => clearInterval(run);
+    return () => clearInterval(timer);
   }, [time, running]);
-
-  const hours = Math.floor(time / 3600);
-  const minutes = Math.floor((time % 3600) / 60);
+  // console.log(time);
+  const hour = Math.floor(time / 3600);
+  const min = Math.floor((time % 3600) / 60);
   const sec = Math.floor(time % 60);
   return (
-    <>
-      <p>StopWatch</p>
-      <button onClick={() => setRunning(true)}>start</button>
-      <button onClick={() => setRunning(false)}>pause</button>
+    <div>
+      StopWatch
+      <button onClick={() => setRunning(true)}>Start</button>
+      <button onClick={() => setRunning(false)}>Pause</button>
       <button
         onClick={() => {
           setRunning(false);
           setTime(0);
         }}
       >
-        reset
+        Restart
       </button>
-      {hours.toString().padStart(2, "0")}:{minutes.toString().padStart(2, "0")}:
+      {hour.toString().padStart(2, "0")}:{min.toString().padStart(2, "0")}:
       {sec.toString().padStart(2, "0")}
-    </>
+    </div>
   );
 }
 

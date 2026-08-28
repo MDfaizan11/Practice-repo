@@ -161,6 +161,42 @@ function ZeroLast() {
     console.log(result);
   }
   lastZero4(arr2);
+
+  const arr3 = [1, 2, 0, 8, 7, 9, 0, 3, 0];
+  function last(arr) {
+    const result = [];
+    for (let char of arr3) {
+      if (char !== 0) {
+        result.push(char);
+      }
+    }
+    for (let char of arr) {
+      if (char === 0) {
+        result.push(char);
+      }
+    }
+    console.log(result);
+  }
+  last(arr3);
+
+  const arr4 = [1, 2, 0, 8, 7, 9, 0, 3, 0];
+
+  function silding(arr) {
+    let left = 0;
+
+    for (let right = 0; right < arr.length - 1; right++) {
+      if (arr[right] !== 0) {
+        [arr[left], arr[right]] = [arr[right], arr[left]];
+        left++;
+      }
+    }
+    console.log(arr);
+  }
+  silding(arr4);
+
+  const arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const result = arr5.filter((item) => item % 2 !== 0);
+  console.log(result);
   return <div>ZeroLast</div>;
 }
 

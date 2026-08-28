@@ -35,6 +35,17 @@ function ReverseString() {
     console.log(result.join(""));
   }
   reverse2(word);
+
+  let myName1 = "mohammed faizan";
+  function reverseCharctor(word) {
+    let newName = word.toLowerCase().split(" ");
+    console.log(newName);
+    const result = newName.map((word) => {
+      return word.split("").reverse().join("");
+    });
+    console.log(result.join( ));
+  }
+  reverseCharctor(myName1);
   return <div>ReverseString</div>;
 }
 
