@@ -42,6 +42,18 @@ function LinearSearch() {
   }
   const result3 = CheckLiner(array3, target3);
   console.log(result3);
+
+  const arr4 = [1, 2, 3, 5, 6, 8];
+
+  function linea(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  console.log(linea(arr4, 8));
   return <div>LinearSearch</div>;
 }
 

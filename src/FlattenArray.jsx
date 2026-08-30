@@ -48,6 +48,22 @@ function FlattenArray() {
     return result;
   }
   flat(arr2);
+
+  const arr3 = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+  function flatArry(arr) {
+    const result = [];
+    for (let char of arr) {
+      if (Array.isArray(char)) {
+        result.push(...flatArry(char));
+      } else {
+        result.push(char);
+      }
+    }
+    console.log(result);
+
+    return result;
+  }
+  flatArry(arr3);
   return <div>FlattenArray</div>;
 }
 

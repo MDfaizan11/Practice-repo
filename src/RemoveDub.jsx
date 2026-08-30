@@ -48,6 +48,7 @@
 
 // export default RemoveDub;
 
+import { duration } from "@mui/material";
 import React from "react";
 
 function RemoveDub() {
@@ -191,6 +192,26 @@ function RemoveDub() {
     return { result, dublicate };
   }
   removed(arr1);
+
+  const arr2 = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function findDub(arr) {
+    const Dublicates = [];
+    const frequency = {};
+
+    for (let char of arr) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    console.log(frequency);
+    for (let char of arr) {
+      if (frequency[char] > 1 && !Dublicates.includes(char)) {
+        Dublicates.push(char);
+      }
+    }
+
+    console.log(Dublicates);
+  }
+  findDub(arr2);
   return <div>RemoveDub</div>;
 }
 

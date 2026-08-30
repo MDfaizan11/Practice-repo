@@ -61,7 +61,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <ReverseString />
+        <FlattenArray />
       </Suspense>
     </>
   );

@@ -114,6 +114,21 @@ function Palindrom() {
     return result;
   }
   findPalim(word1);
+
+  const word2 = "faizan";
+  function FindPalindeon(word) {
+    const newName = word.toLowerCase();
+    console.log(newName);
+    let result = [];
+    for (let i = newName.length - 1; i >= 0; i--) {
+      result.push(newName[i]);
+    }
+
+    console.log(result);
+    let finalResult = newName === result.join("");
+    console.log(finalResult);
+  }
+  FindPalindeon(word2);
   return <div>Palindrom</div>;
 }
 
