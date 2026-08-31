@@ -151,9 +151,9 @@ function FindMissElement() {
   twoMissNumber(num);
 
   const num1 = [1, 2, 3, 4, 5, 6, 9];
-  let expectedLength  = num1.length + 1;
-  const expectedSum1  = (expectedLength * (expectedLength + 1)) / 2;
-  const actualSum  = num1.reduce((prev, curr) => curr + prev);
+  let expectedLength = num1.length + 1;
+  const expectedSum1 = (expectedLength * (expectedLength + 1)) / 2;
+  const actualSum = num1.reduce((prev, curr) => curr + prev);
   const result1 = expectedSum1 - actualSum;
   console.log(result1);
 
@@ -168,6 +168,31 @@ function FindMissElement() {
     console.log(result);
   }
   TwoMiss(num1);
+
+  const nums = [1, 2, 4, 5, 6, 7, 8, 9];
+
+  const actLength = nums.length + 1;
+  console.log(actLength);
+  const ExpecLength = (actLength * (actLength + 1)) / 2;
+  console.log(ExpecLength);
+  const numsLength = nums.reduce((prev, curr) => curr + prev, 0);
+  console.log(numsLength);
+  const missNum = ExpecLength - numsLength;
+  console.log(missNum);
+
+  const nums2 = [4, 3, 2, 7, 8, 2, 3, 1];
+  function findDissapperNum(num) {
+    let maxnum = Math.max(...num);
+    const missnums = [];
+    for (let i = 1; i <= maxnum; i++) {
+      if (!num.includes(i)) {
+        missnums.push(i);
+      }
+    }
+
+    console.log(missnums);
+  }
+  findDissapperNum(nums2);
   return <div>FindMissElement</div>;
 }
 

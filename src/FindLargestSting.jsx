@@ -168,7 +168,28 @@ function FindLargestSting() {
   console.log(longest);
   console.log(SecondLargest);
 
+  const wordLenght = "mohammed faizan khan";
+  const newwordLenght = wordLenght.split(" ");
+  let longWordLength = "";
+  let secoundLongWord = "";
 
+  for (let char of newwordLenght) {
+    if (char.length > longWordLength.length) {
+      secoundLongWord = longWordLength;
+      longWordLength = char;
+    } else if (char.length > secoundLongWord.length) {
+      secoundLongWord = char;
+    }
+  }
+  console.log(longWordLength);
+  console.log(secoundLongWord);
+  let smal = newwordLenght[0];
+  for (let char of newwordLenght) {
+    if (char.length < smal.length) {
+      smal = char;
+    }
+    console.log(smal);
+  }
   return <div>FindLargestSting</div>;
 }
 

@@ -96,6 +96,27 @@ function FirstNonRepeat() {
     console.log(result);
   }
   firstNon(word1);
+
+  const word2 = "aabbcddf";
+  function firstNonRepeat1(word) {
+    const count = {};
+    let increaseCount = 0;
+    for (let char of word) {
+      count[char] = (count[char] || 0) + 1;
+    }
+    console.log(count);
+
+    for (let firstchr of word) {
+      if (count[firstchr] === 1) {
+        increaseCount++;
+        if (increaseCount === 2) {
+          console.log(firstchr);
+          return;
+        }
+      }
+    }
+  }
+  firstNonRepeat1(word2);
   return <div>FirstNonRepeat</div>;
 }
 

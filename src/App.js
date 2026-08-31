@@ -57,11 +57,12 @@ const CustomHook1 = lazy(() => import("./CustomHook1"));
 const CustomHook1Data = lazy(() => import("./CustomHook1Data"));
 const Factorial = lazy(() => import("./Factorial"));
 const Search = lazy(() => import("./Search"));
+const FindLongestSubString = lazy(() => import("./FindLongestSubString"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FlattenArray />
+        <FindLargeNumber />
       </Suspense>
     </>
   );

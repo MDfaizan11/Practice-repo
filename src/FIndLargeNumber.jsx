@@ -193,6 +193,16 @@ function FIndLargeNumber() {
   console.log(largestEle);
   console.log(SecoundLargestELe);
 
+  const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  let largnum = nums[0];
+  for (let num of nums) {
+    if (num > largnum) {
+      largnum = num;
+    }
+  }
+  console.log(largnum);
+
   return <div>FIndLargeNumber</div>;
 }
 
