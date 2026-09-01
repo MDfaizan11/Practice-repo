@@ -58,11 +58,13 @@ const CustomHook1Data = lazy(() => import("./CustomHook1Data"));
 const Factorial = lazy(() => import("./Factorial"));
 const Search = lazy(() => import("./Search"));
 const FindLongestSubString = lazy(() => import("./FindLongestSubString"));
+const FindAnagram = lazy(() => import("./FindAnagram"));
+const FindCommonElement = lazy(() => import("./FindCommonElement"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargeNumber />
+        <FindCommonElement />
       </Suspense>
     </>
   );
