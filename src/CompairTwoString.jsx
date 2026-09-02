@@ -92,6 +92,9 @@ function CompairTwoString() {
     return true;
   }
   console.log(stringCheck(str5, str6));
+
+
+  
   return <div>CompairTwoString</div>;
 }
 

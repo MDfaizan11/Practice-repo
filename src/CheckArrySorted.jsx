@@ -183,6 +183,16 @@ function CheckArrySorted() {
   }
   console.log(arrcheck(arr5));
 
+  const arr6 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  function check2(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(check2(arr6));
   return <div>CheckArrySorted</div>;
 }
 export default CheckArrySorted;

@@ -64,7 +64,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindCommonElement />
+        <CheckArrySorted />
       </Suspense>
     </>
   );
