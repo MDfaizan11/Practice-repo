@@ -44,8 +44,6 @@ const FirstNonRepeat = lazy(() => import("./FirstNonRepeat"));
 const ZeroLast = lazy(() => import("./ZeroLast"));
 const LeanerSearch = lazy(() => import("./LinearSearch"));
 const CheckArrySorted = lazy(() => import("./CheckArrySorted"));
-const CustomHook3 = lazy(() => import("./CustomHook3"));
-const Custom3dataShow = lazy(() => import("./Custom3dataShow"));
 const MergeArray = lazy(() => import("./MergeTwoArray"));
 const FlattenArray = lazy(() => import("./FlattenArray"));
 const NewCustomHookData = lazy(() => import("./NewCustomHookData"));
@@ -60,11 +58,15 @@ const Search = lazy(() => import("./Search"));
 const FindLongestSubString = lazy(() => import("./FindLongestSubString"));
 const FindAnagram = lazy(() => import("./FindAnagram"));
 const FindCommonElement = lazy(() => import("./FindCommonElement"));
+// const ProductContext = lazy(() => import("./ProductContext"));
+// import { userdataContext } from "./ProductContext";
+// import ProductContext from "./ProductContext";
+
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CheckArrySorted />
+        <Toggle />
       </Suspense>
     </>
   );

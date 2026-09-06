@@ -117,6 +117,9 @@ function StopWatch() {
   const [time, setTime] = useState(0);
   const [running, setRunning] = useState(false);
 
+  const [newTime, setNewTime] = useState(0);
+  const [newRunning, setNewRunning] = useState(false);
+
   useEffect(() => {
     if (!running) return;
     const timer = setInterval(() => {
@@ -128,22 +131,56 @@ function StopWatch() {
   const hour = Math.floor(time / 3600);
   const min = Math.floor((time % 3600) / 60);
   const sec = Math.floor(time % 60);
+
+  useEffect(() => {
+    if (!newRunning) return;
+    const timer = setInterval(() => {
+      setNewTime(newTime + 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [newTime, newRunning]);
+
+  const hours = Math.floor(newTime / 3600);
+  const mins = Math.floor((newTime % 3600) / 60);
+  const secound = Math.floor(newTime % 60);
+
+  function handlePause() {
+    setNewRunning(false);
+  }
   return (
-    <div>
-      StopWatch
-      <button onClick={() => setRunning(true)}>Start</button>
-      <button onClick={() => setRunning(false)}>Pause</button>
-      <button
-        onClick={() => {
-          setRunning(false);
-          setTime(0);
-        }}
-      >
-        Restart
-      </button>
-      {hour.toString().padStart(2, "0")}:{min.toString().padStart(2, "0")}:
-      {sec.toString().padStart(2, "0")}
-    </div>
+    <>
+      <div>
+        StopWatch
+        <button onClick={() => setRunning(true)}>Start</button>
+        <button onClick={() => setRunning(false)}>Pause</button>
+        <button
+          onClick={() => {
+            setRunning(false);
+            setTime(0);
+          }}
+        >
+          Restart
+        </button>
+        {hour.toString().padStart(2, "0")}:{min.toString().padStart(2, "0")}:
+        {sec.toString().padStart(2, "0")}
+      </div>
+
+      <div>
+        <button onClick={() => setNewRunning(true)}>Start</button>
+        <button onClick={handlePause}>pause</button>
+        <button
+          onClick={() => {
+            setNewRunning(false);
+            setNewTime(0);
+          }}
+        >
+          reset
+        </button>
+        {hours.toString().padStart(2, "0")}:{mins.toString().padStart(2, "0")}:
+        {secound.toString().padStart(2, "0")}
+      </div>
+    </>
   );
 }
 

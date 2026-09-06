@@ -197,6 +197,24 @@ function ZeroLast() {
   const arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const result = arr5.filter((item) => item % 2 !== 0);
   console.log(result);
+
+  const arr = [1, 0, 2, 0, 3, 0, 4, 0];
+
+  function lZero(arr) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+        result.push(arr[i]);
+      }
+    }
+    console.log(result);
+  }
+  lZero(arr);
   return <div>ZeroLast</div>;
 }
 
