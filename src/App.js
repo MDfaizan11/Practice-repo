@@ -61,12 +61,13 @@ const FindCommonElement = lazy(() => import("./FindCommonElement"));
 // const ProductContext = lazy(() => import("./ProductContext"));
 // import { userdataContext } from "./ProductContext";
 // import ProductContext from "./ProductContext";
-
+const CustomHook3 = lazy(() => import("./CustomHook3"));
+const Customhook3data = lazy(() => import("./Customhook3data"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Toggle />
+        <Customhook3data />
       </Suspense>
     </>
   );

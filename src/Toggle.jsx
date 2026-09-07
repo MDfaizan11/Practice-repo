@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-
+import React, { useContext, useState } from "react";
+import { userdataContext } from "./ProductContext";
 function Toggle() {
+  const { ProductData } = useContext(userdataContext);
   const [itemId, setItemId] = useState("");
   const [newItemId, setNewItemId] = useState("");
   const data = [
@@ -32,49 +33,59 @@ function Toggle() {
   }
 
   return (
-    <div>
-      show data
-      {data.map((item, index) => {
-        return (
-          <div>
-            <p>{item.name}</p>
-            <button onClick={() => handleShowData(item.id)}>
-              {itemId === item.id ? "close" : "open"}
-            </button>
-            {itemId === item.id &&
-              item.subcategories.map((sub) => {
-                return (
-                  <div>
-                    <p>{sub.name}</p>
-                  </div>
-                );
-              })}
-          </div>
-        );
-      })}
-      {data.map((item, index) => {
-        return (
-          <div>
-            <p>{item.name}</p>
-            <div
-              role="button"
-              aria-label="open"
-              onClick={() => handleOpen(item.id)}
-            >
-              {newItemId === item.id ? "close" : "open"}
+    <>
+      <div>
+        show data
+        {data.map((item, index) => {
+          return (
+            <div>
+              <p>{item.name}</p>
+              <button onClick={() => handleShowData(item.id)}>
+                {itemId === item.id ? "close" : "open"}
+              </button>
+              {itemId === item.id &&
+                item.subcategories.map((sub) => {
+                  return (
+                    <div>
+                      <p>{sub.name}</p>
+                    </div>
+                  );
+                })}
             </div>
-            {newItemId === item.id &&
-              item.subcategories.map((item, inex) => {
-                return (
-                  <div>
-                    <p>{item.name}</p>
-                  </div>
-                );
-              })}
+          );
+        })}
+        {data.map((item, index) => {
+          return (
+            <div>
+              <p>{item.name}</p>
+              <div
+                role="button"
+                aria-label="open"
+                onClick={() => handleOpen(item.id)}
+              >
+                {newItemId === item.id ? "close" : "open"}
+              </div>
+              {newItemId === item.id &&
+                item.subcategories.map((item, inex) => {
+                  return (
+                    <div>
+                      <p>{item.name}</p>
+                    </div>
+                  );
+                })}
+            </div>
+          );
+        })}
+      </div>
+
+      {ProductData.map((item, idex) => {
+        return (
+          <div>
+            <p>{item.title}</p>
           </div>
         );
       })}
-    </div>
+    </>
   );
 }
 
