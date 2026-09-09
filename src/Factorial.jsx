@@ -24,7 +24,7 @@ function Factorial() {
 
     return num * findFactorial1(num - 1);
   }
-  console.log(findFactorial1(6));
+  console.log(findFactorial1(0));
   return <div>Factorial</div>;
 }
 

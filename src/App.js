@@ -63,11 +63,13 @@ const FindCommonElement = lazy(() => import("./FindCommonElement"));
 // import ProductContext from "./ProductContext";
 const CustomHook3 = lazy(() => import("./CustomHook3"));
 const Customhook3data = lazy(() => import("./Customhook3data"));
+const Factorial1 = lazy(() => import("./Factorial"));
+const Twosum = lazy(() => import("./Twosum"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Customhook3data />
+        <FindLargestString />
       </Suspense>
     </>
   );

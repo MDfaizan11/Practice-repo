@@ -190,6 +190,16 @@ function FindLargestSting() {
     }
     console.log(smal);
   }
+
+  const name2 = "mohammed faizan";
+  let largestString1 = "";
+  for (let large of name2.split(" ")) {
+    if (large.length > largestString1.length) {
+      largestString1 = large;
+    }
+  }
+  console.log(largestString1);
+
   return <div>FindLargestSting</div>;
 }
 

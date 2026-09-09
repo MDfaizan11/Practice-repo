@@ -91,7 +91,7 @@ function FirstNonRepeat() {
     for (let newWord of word) {
       if (result[newWord] > 1) {
         console.log(newWord);
-      }
+      } 
     }
     console.log(result);
   }

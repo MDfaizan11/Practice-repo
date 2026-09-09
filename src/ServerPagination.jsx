@@ -4,11 +4,12 @@ import { Pagination, Stack, CircularProgress } from "@mui/material";
 export default function ServerPagination() {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
+  console.log(data);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=5`)
+    fetch(`https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=10`)
       .then((res) => res.json())
       .then((json) => {
         setData(json);
