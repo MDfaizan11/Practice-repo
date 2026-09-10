@@ -129,6 +129,20 @@ function Palindrom() {
     console.log(finalResult);
   }
   FindPalindeon(word2);
+
+  const word3 = "madam";
+  function checkPalindrom3(word) {
+    const newWord = word.toLowerCase();
+    console.log(newWord);
+    const result = [];
+    for (let i = word.length - 1; i >= 0; i--) {
+      result.push(word[i]);
+    }
+    console.log(result.join(""));
+    const finalResult = newWord === result.join("");
+    console.log(finalResult);
+  }
+  checkPalindrom3(word3);
   return <div>Palindrom</div>;
 }
 

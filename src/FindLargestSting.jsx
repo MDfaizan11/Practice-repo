@@ -200,6 +200,23 @@ function FindLargestSting() {
   }
   console.log(largestString1);
 
+  const name3 = "mohammed faizan";
+  let largestString3 = "";
+  for (let large of name3.split(" ")) {
+    if (large.length > largestString3.length) {
+      largestString3 = large;
+    }
+  }
+  console.log(largestString3);
+
+  let smallestString3 = name3.split(" ")[0];
+  for (let small of name3.split(" ")) {
+    if (small.length < smallestString3.length) {
+      smallestString3 = small;
+    }
+  }
+  console.log(smallestString3);
+
   return <div>FindLargestSting</div>;
 }
 
