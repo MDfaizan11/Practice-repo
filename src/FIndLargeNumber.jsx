@@ -203,6 +203,20 @@ function FIndLargeNumber() {
   }
   console.log(largnum);
 
+  const nums1 = [1, 2, 3, 4, 5, 6];
+  let largestnum1 = nums1[0];
+  let secoundLarge2 = Infinity;
+
+  for (let num of nums1) {
+    if (num > largestnum1) {
+      secoundLarge2 = largestnum1;
+      largestnum1 = num;
+    } else if (num > secoundLarge2) {
+      secoundLarge2 = num;
+    }
+  }
+  console.log(secoundLarge2);
+
   return <div>FIndLargeNumber</div>;
 }
 

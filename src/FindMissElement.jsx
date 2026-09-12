@@ -193,6 +193,27 @@ function FindMissElement() {
     console.log(missnums);
   }
   findDissapperNum(nums2);
+
+  const nums3 = [1, 5, 6, 7, 8, 9];
+
+  // const nums3length = nums3.length + 1;
+  // const nums3ExpectedLength = (nums3length * (nums3length + 1)) / 2;
+  // const actualLenghtNums3 = nums3.reduce((prev, curr) => curr + prev, 0);
+  // const nums3result = nums3ExpectedLength - actualLenghtNums3;
+  // console.log(nums3result);
+
+  function findNums3MissNum(num) {
+    const maxnum = Math.max(...num);
+    const result = [];
+    for (let i = 1; i < maxnum; i++) {
+      if (!num.includes(i)) {
+        result.push(i);
+      }
+    }
+
+    console.log(result);
+  }
+  findNums3MissNum(nums3);
   return <div>FindMissElement</div>;
 }
 

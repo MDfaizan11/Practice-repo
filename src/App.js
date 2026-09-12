@@ -66,11 +66,13 @@ const Customhook3data = lazy(() => import("./Customhook3data"));
 const Factorial1 = lazy(() => import("./Factorial"));
 const Twosum = lazy(() => import("./Twosum"));
 const Sort = lazy(() => import("./Sort"));
+const ValidParenthesis = lazy(() => import("./ValidParenthesis"));
+const Sum3ConsecutiveNumber = lazy(() => import("./Sum3ConsecutiveNumber"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargeNumber />
+        <Sum3ConsecutiveNumber />
       </Suspense>
     </>
   );
