@@ -212,6 +212,23 @@ function RemoveDub() {
     console.log(Dublicates);
   }
   findDub(arr2);
+
+  const arr3 = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9];
+  function removeArr3(arr) {
+    const result = [];
+    let frequency = {};
+    for (let char of arr) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    console.log(frequency);
+    for (let dub of arr) {
+      if (frequency[dub] > 1 && !result.includes(dub)) {
+        result.push(dub);
+      }
+    }
+    console.log(result);
+  }
+  removeArr3(arr3);
   return <div>RemoveDub</div>;
 }
 

@@ -72,7 +72,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Sum3ConsecutiveNumber />
+        <RemoveDub />
       </Suspense>
     </>
   );

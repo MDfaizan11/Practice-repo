@@ -300,6 +300,27 @@ function CountFrequancy() {
     console.log(repeatchar.join(" ,"));
   }
   Namefre(myNewname);
+
+  const words = "aabbccdeef";
+  function findFrequency(word) {
+    const result = {};
+    let count = 0;
+    for (let char of word.toString()) {
+      result[char] = (result[char] || 0) + 1;
+    }
+
+    for (let char of word) {
+      if (result[char] === 1) {
+        count++;
+
+        if (count === 2) {
+          console.log(char);
+          return;
+        }
+      }
+    }
+  }
+  findFrequency(words);
   return <div>CountFrequancy</div>;
 }
 
