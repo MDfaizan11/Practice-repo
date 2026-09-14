@@ -68,11 +68,12 @@ const Twosum = lazy(() => import("./Twosum"));
 const Sort = lazy(() => import("./Sort"));
 const ValidParenthesis = lazy(() => import("./ValidParenthesis"));
 const Sum3ConsecutiveNumber = lazy(() => import("./Sum3ConsecutiveNumber"));
+const PrimeNumber = lazy(() => import("./PrimeNumber"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <RemoveDub />
+        <PrimeNumber />
       </Suspense>
     </>
   );
