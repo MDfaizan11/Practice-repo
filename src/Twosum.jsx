@@ -32,6 +32,24 @@ function Twosum() {
     return result;
   }
   findSumTwo(arr1, target1);
+
+  const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const targetNum = 12;
+  function FindTarget(num, targetNum) {
+    console.log(num, targetNum);
+    const resultnum = [];
+
+    for (let i = 0; i < num.length; i++) {
+      for (let j = i + 1; j < num.length; j++) {
+        if (num[i] + num[j] === targetNum) {
+          return resultnum.push(i, j);
+        }
+      }
+    }
+    console.log(resultnum);
+  }
+  FindTarget(num, targetNum);
+
   return <div>Twosum</div>;
 }
 

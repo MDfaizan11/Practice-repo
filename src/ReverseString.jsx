@@ -61,10 +61,22 @@ function ReverseString() {
       result2.push(newWord[i]);
     }
     console.log(result2.join(" "));
-  } 
+  }
 
   reverse3(myname3);
 
+  const name4 = "mohammed faizan";
+
+  function reverseName4(word) {
+    const newWord = word.split(" ");
+    const result = [];
+    for (let i = newWord.length - 1; i >= 0; i--) {
+      result.push(newWord[i]);
+    }
+
+    console.log(result.join(" "));
+  }
+  reverseName4(name4);
   return <div>ReverseString</div>;
 }
 
