@@ -217,6 +217,36 @@ function FIndLargeNumber() {
   }
   console.log(secoundLarge2);
 
+  const num2 = [1, 2, 3, 4, 5, 6];
+  let largestnum2 = num2[0];
+  for (let large of num2) {
+    if (large > largestnum2) {
+      largestnum2 = large;
+    }
+  }
+  console.log(largestnum2);
+  let smallestNum2 = num2[0];
+  for (let small of num2) {
+    if (small < smallestNum2) {
+      smallestNum2 = small;
+    }
+  }
+
+  console.log(smallestNum2);
+
+  const arr5 = [1, 2, 3, 4, 5, 6];
+  let largestArr5 = arr5[0];
+  let SecoundLargestnum2 = Infinity;
+  for (let large of arr5) {
+    if (large > largestArr5) {
+      SecoundLargestnum2 = largestArr5;
+      largestArr5 = large;
+    } else if (large > SecoundLargestnum2) {
+      SecoundLargestnum2 = large;
+    }
+  }
+  console.log(SecoundLargestnum2);
+
   return <div>FIndLargeNumber</div>;
 }
 

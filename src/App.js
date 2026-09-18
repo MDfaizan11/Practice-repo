@@ -73,7 +73,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Twosum />
+        <FindLargestString />
       </Suspense>
     </>
   );

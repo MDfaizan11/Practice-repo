@@ -232,6 +232,21 @@ function FindLargestSting() {
   }
   console.log(secoundLargestWord4);
 
+  const name5 = "mohammed faizan khan";
+  const newName5 = name5.split(" ");
+  let largestName5 = "";
+  let secoundlargestName5 = "";
+  for (let word of newName5) {
+    if (word.length > largestName5.length) {
+      secoundlargestName5 = largestName5;
+      largestName5 = word;
+    } else if (word.length > secoundlargestName5.length) {
+      secoundlargestName5 = word;
+    }
+  }
+  console.log(largestName5);
+  console.log(secoundlargestName5);
+
   return <div>FindLargestSting</div>;
 }
 

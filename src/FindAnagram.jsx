@@ -66,6 +66,32 @@ function FindAnagram() {
     return true;
   }
   console.log(checkanagram(word1, word2));
+
+  const word3 = "faizan";
+  const word4 = "naziaf";
+  function checkAangram(word1, word2) {
+    if (word1.length !== word2.length) return false;
+
+    const obj1 = {};
+    const obj2 = {};
+    for (let char of word1) {
+      obj1[char] = (obj1[char] || 0) + 1;
+    }
+    console.log(obj1);
+    for (let char of word2) {
+      obj2[char] = (obj2[char] || 0) + 1;
+    }
+    console.log(obj2);
+
+    for (let char of word1) {
+      if (obj1[char] !== obj2[char]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  const result = checkAangram(word3, word4);
+  console.log(result);
   return <div>FindAnagram</div>;
 }
 

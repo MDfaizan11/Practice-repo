@@ -20,6 +20,18 @@ function Sort() {
   }
   console.log(arr);
 
+  const arr2 = [1, 3, 2, 4, 6, 5, 9, 8, 7];
+
+  for (let i = 0; i < arr2.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr2[j] > arr2[j + 1]) {
+        let temp = arr2[j];
+        arr2[j] = arr2[j + 1];
+        arr2[j + 1] = temp;
+      }
+    }
+  }
+  console.log(arr2);
   return <div>Sort</div>;
 }
 

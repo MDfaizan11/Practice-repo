@@ -143,6 +143,20 @@ function Palindrom() {
     console.log(finalResult);
   }
   checkPalindrom3(word3);
+
+  let word4 = "madam";
+  function checkWord4Palindrom(word) {
+    let newWord = word.toLowerCase();
+    console.log(newWord);
+    let result = [];
+    for (let i = word.length - 1; i >= 0; i--) {
+      result.push(word[i]);
+    }
+    console.log(result.join(""));
+    let finalCheck = newWord === result.join("");
+    console.log(finalCheck);
+  }
+  checkWord4Palindrom(word4);
   return <div>Palindrom</div>;
 }
 
