@@ -214,6 +214,29 @@ function FindMissElement() {
     console.log(result);
   }
   findNums3MissNum(nums3);
+
+  const nums1 = [1, 2, 3, 6, 7, 8, 9];
+  function findmissnum(arr) {
+    // const arrlength = arr.length + 1;
+    // console.log(arrlength);
+    // let expextedLength = (arrlength * (arrlength + 1)) / 2;
+    // let actualLength = 0;
+    // for (let i = 0; i < arr.length; i++) {
+    //   actualLength += arr[i];
+    // }
+    // return expextedLength - actualLength;
+
+    const maxnum = Math.max(...arr);
+    let result = [];
+    for (let i = 1; i < maxnum; i++) {
+      if (!arr.includes(i)) {
+        result.push(i);
+      }
+    }
+    console.log(result);
+  }
+  findmissnum(nums1);
+
   return <div>FindMissElement</div>;
 }
 

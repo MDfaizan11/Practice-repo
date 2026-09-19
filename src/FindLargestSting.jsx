@@ -105,7 +105,7 @@
 
 // export default FindLargestSting;
 
-import React from "react";
+import React, { useEffect } from "react";
 
 function FindLargestSting() {
   const name = "mohammed faizan";

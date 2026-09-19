@@ -321,6 +321,27 @@ function CountFrequancy() {
     }
   }
   findFrequency(words);
+
+  const word = "aabbccddeffg";
+  function findWordFrequency(word) {
+    let frequency = {};
+    let count = 0;
+
+    for (let char of word) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    for (let unique of word) {
+      if (frequency[unique] === 1) {
+        count++;
+        if (count === 2) {
+          console.log(unique);
+          return;
+        }
+      }
+    }
+  }
+  findWordFrequency(word);
+
   return <div>CountFrequancy</div>;
 }
 
