@@ -70,11 +70,12 @@ const ValidParenthesis = lazy(() => import("./ValidParenthesis"));
 const Sum3ConsecutiveNumber = lazy(() => import("./Sum3ConsecutiveNumber"));
 const PrimeNumber = lazy(() => import("./PrimeNumber"));
 const DebouncingSearch = lazy(() => import("./DebouncingSearch"));
+const DebouncingData = lazy(() => import("./DebouncingData"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <DebouncingSearch />
+        <RemoveDub />
       </Suspense>
     </>
   );

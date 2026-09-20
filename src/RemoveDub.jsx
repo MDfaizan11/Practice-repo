@@ -229,6 +229,20 @@ function RemoveDub() {
     console.log(result);
   }
   removeArr3(arr3);
+
+  const arr4 = [1, 1, 2, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function removeDubarr4(arr) {
+    const result = [];
+    for (let char of arr) {
+      if (!result.includes(char)) {
+        result.push(char);
+      }
+    }
+
+    return result;
+  }
+  console.log(removeDubarr4(arr4));
   return <div>RemoveDub</div>;
 }
 

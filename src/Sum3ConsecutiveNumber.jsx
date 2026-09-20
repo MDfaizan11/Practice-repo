@@ -13,6 +13,18 @@ function Sum3ConsecutiveNumber() {
   }
   const sums = sumOfThreeConsecutiveNumbers(nums);
   console.log(sums);
+
+  const arr = [1, 2, 3, 4, 5, 6];
+  function findSum(arr) {
+    const result = [];
+    for (let i = 0; i <= arr.length - 2; i++) {
+      const sum = arr[i] + arr[i + 1];
+      result.push(sum);
+    }
+    console.log(result);
+    return result;
+  }
+  findSum(arr);
   return <div>Sum3ConsecutiveNumber</div>;
 }
 

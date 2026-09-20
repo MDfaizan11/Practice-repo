@@ -108,8 +108,13 @@
 import React, { useEffect, useState } from "react";
 
 function Debouncing() {
+  const [data, setdata] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   const [debouncing, setDebouncing] = useState("");
+  const [newSearch, setNewSearch] = useState("");
+  const [newDebouncing, setNewDebouncing] = useState("");
   const Names = [
     "Anil",
     "Sunil",
@@ -134,6 +139,35 @@ function Debouncing() {
   const seachData = Names.filter((item) => {
     return item.toLowerCase().includes(debouncing.toLowerCase());
   });
+
+  useEffect(() => {
+    async function getData() {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/comments",
+        );
+        const data = await response.json();
+        setdata(data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const debouncingFilter = setTimeout(() => {
+      setNewDebouncing(newSearch);
+    }, 1000);
+    return () => clearTimeout(debouncingFilter);
+  }, [newSearch]);
+
+  const filterNewDebouncing = data.filter((item) => {
+    return item.name.toLowerCase().includes(newDebouncing.toLocaleLowerCase());
+  });
   return (
     <>
       <p>Debouncing</p>
@@ -149,7 +183,21 @@ function Debouncing() {
             })
           : "No name avaible"}
       </ul>
-      {}
+
+      <input
+        type="search"
+        value={newSearch}
+        onChange={(e) => setNewSearch(e.target.value)}
+      />
+      {filterNewDebouncing.length > 0
+        ? filterNewDebouncing.map((item) => {
+            return (
+              <div>
+                <p>{item.name}</p>
+              </div>
+            );
+          })
+        : "no data found"}
     </>
   );
 }

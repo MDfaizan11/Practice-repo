@@ -215,6 +215,26 @@ function ZeroLast() {
     console.log(result);
   }
   lZero(arr);
+
+  const arr6 = [1, 2, 0, 3, 0, 4, 5, 0];
+  function lastZeroarr6(arr) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    console.log(result);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+        result.push(arr[i]);
+      }
+    }
+    // console.log(result);
+    return result;
+  }
+  const resultarr6 = lastZeroarr6(arr6);
+  console.log(resultarr6);
   return <div>ZeroLast</div>;
 }
 
