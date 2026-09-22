@@ -263,7 +263,12 @@ function City() {
 
     const city = countries.find((item, index) => item.id === selected);
     console.log(city);
-    setMyCity(city ? city.cities : []);
+    if (city) {
+      setNewCity(city.cities);
+    } else {
+      setNewCity([]);
+    }
+    // setMyCity(city ? city.cities : []);
   }
 
   function handleSelectCity(e) {

@@ -71,11 +71,12 @@ const Sum3ConsecutiveNumber = lazy(() => import("./Sum3ConsecutiveNumber"));
 const PrimeNumber = lazy(() => import("./PrimeNumber"));
 const DebouncingSearch = lazy(() => import("./DebouncingSearch"));
 const DebouncingData = lazy(() => import("./DebouncingData"));
+const CountryCity = lazy(() => import("./CountryCity"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <RemoveDub />
+        <CountryCity />
       </Suspense>
     </>
   );

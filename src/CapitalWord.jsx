@@ -119,6 +119,15 @@ function CapitalWord() {
     console.log(result.join(" "));
   }
   capital1(word1);
+
+  const newWord = "mohammed faizan khan";
+  function capitalNewWord(word) {
+    const result = word.split(" ").map((item) => {
+      return item.charAt(0).toUpperCase() + item.slice(1);
+    });
+    console.log(result.join(" "));
+  }
+  capitalNewWord(newWord);
   return <div>CapitalWord</div>;
 }
 

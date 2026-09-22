@@ -61,6 +61,7 @@
 
 // export default CheckArrySorted;
 
+import { TurkishLira } from "lucide-react";
 import React from "react";
 
 function CheckArrySorted() {
@@ -193,6 +194,21 @@ function CheckArrySorted() {
     return true;
   }
   console.log(check2(arr6));
+
+  const arr7 = [1, 22, 3, 4, 5, 6, 7, 8, 9];
+  function checkArr7(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+  const arr7result = checkArr7(arr7);
+  console.log(arr7result);
   return <div>CheckArrySorted</div>;
 }
 export default CheckArrySorted;
