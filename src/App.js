@@ -72,11 +72,12 @@ const PrimeNumber = lazy(() => import("./PrimeNumber"));
 const DebouncingSearch = lazy(() => import("./DebouncingSearch"));
 const DebouncingData = lazy(() => import("./DebouncingData"));
 const CountryCity = lazy(() => import("./CountryCity"));
+const DebouncingList = lazy(() => import("./DebouncingList"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <CountryCity />
+        <ZeroLast />
       </Suspense>
     </>
   );
