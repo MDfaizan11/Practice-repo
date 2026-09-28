@@ -13,6 +13,19 @@ function Factorial() {
   }
 
   console.log(factorial(5));
+
+  function findFactorial(num) {
+    if (num < 0) {
+      return "negitive num not allowed";
+    }
+    if (num === 0 || num === 1) {
+      return 1;
+    }
+
+    return num * findFactorial(num - 1);
+  }
+  const result = findFactorial(6);
+  console.log(result);
   return <div>Factorial</div>;
 }
 

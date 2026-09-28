@@ -254,6 +254,24 @@ function ZeroLast() {
   const data = arrzero7(arr7);
   console.log(data);
 
+  const arr8 = [1, 2, 0, 4, 5, 0, 6, 0, 7, 8, 0];
+
+  function arr8LastZero(arr) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] !== 0) {
+        result.push(arr[i]);
+      }
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === 0) {
+        result.push(arr[i]);
+      }
+    }
+
+    console.log(result);
+  }
+  arr8LastZero(arr8);
   return <div>ZeroLast</div>;
 }
 

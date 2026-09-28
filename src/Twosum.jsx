@@ -51,6 +51,20 @@ function Twosum() {
   }
   FindTarget(num, targetNum);
 
+  const arr2 = [1, 2, 3, 4, 5, 6, 7];
+  const arr2Target = 9;
+  function findArr2Target(num, tar) {
+    for (let i = 0; i < num.length; i++) {
+      for (let j = i + 1; j < num.length; j++) {
+        if (num[i] + num[j] === tar) {
+          return [i, j];
+        }
+      }
+    }
+  }
+  const arr2result = findArr2Target(arr2, arr2Target);
+  console.log(arr2result);
+
   return <div>Twosum</div>;
 }
 
