@@ -243,6 +243,32 @@ function RemoveDub() {
     return result;
   }
   console.log(removeDubarr4(arr4));
+
+  const num1 = [1, 2, 3, 4, 4, 5, 5];
+  function removenum1(num) {
+    const frequency = {};
+    const result = [];
+    // for (let char of num) {
+    //   if (!result.includes(char)) {
+    //     result.push(char);
+    //   }
+    // }
+    // console.log(result);
+
+    for (let char of num) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    console.log(frequency);
+
+    for (let dub of num) {
+      if (frequency[dub] > 1) {
+        result.push(dub);
+      }
+    }
+
+    console.log(result);
+  }
+  removenum1(num1);
   return <div>RemoveDub</div>;
 }
 

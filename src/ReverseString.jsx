@@ -77,6 +77,11 @@ function ReverseString() {
     console.log(result.join(" "));
   }
   reverseName4(name4);
+
+  const name5 = "mohammed faizan";
+  const name5result = name5.split(" ").reverse().join(" ");
+  console.log(name5result);
+
   return <div>ReverseString</div>;
 }
 

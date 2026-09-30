@@ -157,6 +157,21 @@ function Palindrom() {
     console.log(finalCheck);
   }
   checkWord4Palindrom(word4);
+
+  const word5 = "mum";
+  function word5Palindrom(word) {
+    const newWord = word.toLowerCase();
+    console.log(newWord);
+    const result = [];
+    for (let i = word.length - 1; i >= 0; i--) {
+      result.push(word[i]);
+    }
+    console.log(result);
+    const palim = newWord === result.join("");
+    console.log(palim);
+  }
+  word5Palindrom(word5);
+
   return <div>Palindrom</div>;
 }
 

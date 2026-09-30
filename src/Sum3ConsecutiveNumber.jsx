@@ -25,6 +25,17 @@ function Sum3ConsecutiveNumber() {
     return result;
   }
   findSum(arr);
+
+  const nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  function find2(num) {
+    const result = [];
+    for (let i = 0; i < num.length - 3; i++) {
+      const sum = num[i] + num[i + 1] + num[i + 2];
+      result.push(sum);
+    }
+    console.log(result);
+  }
+  find2(nums1);
   return <div>Sum3ConsecutiveNumber</div>;
 }
 
