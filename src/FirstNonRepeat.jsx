@@ -91,7 +91,7 @@ function FirstNonRepeat() {
     for (let newWord of word) {
       if (result[newWord] > 1) {
         console.log(newWord);
-      } 
+      }
     }
     console.log(result);
   }
@@ -117,6 +117,25 @@ function FirstNonRepeat() {
     }
   }
   firstNonRepeat1(word2);
+
+  let word = "abbccddee";
+  function findnon(word) {
+    const frequency = {};
+    const result = [];
+
+    for (let char of word) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    console.log(frequency);
+    for (let char of word) {
+      if (frequency[char] === 1) {
+        result.push(char);
+      }
+    }
+    console.log(result);
+    return result;
+  }
+  findnon(word);
   return <div>FirstNonRepeat</div>;
 }
 

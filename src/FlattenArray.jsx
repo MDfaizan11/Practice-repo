@@ -96,6 +96,21 @@ function FlattenArray() {
   }
   const result = flatArr(arr);
   console.log(result);
+
+  const arr5 = [1, 2, [3, 4, [5, 6]]];
+  function faltarr5(arr) {
+    const result = [];
+    for (let num of arr) {
+      if (Array.isArray(num)) {
+        result.push(...faltarr5(num));
+      } else {
+        result.push(num);
+      }
+    }
+    return result;
+  }
+  let result5 = faltarr5(arr5);
+  console.log(result5);
   return <div>FlattenArray</div>;
 }
 
