@@ -209,6 +209,19 @@ function CheckArrySorted() {
   }
   const arr7result = checkArr7(arr7);
   console.log(arr7result);
+
+  const arr8 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function checkArr8(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+        return false;
+      }
+    }
+    return true;
+  }
+  const resultarr8 = checkArr8(arr8);
+  console.log(resultarr8);
   return <div>CheckArrySorted</div>;
 }
 export default CheckArrySorted;

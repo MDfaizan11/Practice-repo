@@ -93,8 +93,31 @@ function CompairTwoString() {
   }
   console.log(stringCheck(str5, str6));
 
+  const string1 = "faizan";
+  const string2 = "Shabaz";
 
-  
+  function checkStrings(st1, st2) {
+    if (st1.length !== st2.length) return false;
+
+    const st1feq = {};
+    const st2feq = {};
+
+    for (let char of st1) {
+      st1feq[char] = (st1feq[char] || 0) + 1;
+    }
+    for (let char of st2) {
+      st2feq[char] = (st2feq[char] || 0) + 1;
+    }
+
+    for (let key of st1) {
+      if (st1feq[key] !== st2feq[key]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+  console.log(checkStrings(string1, string2));
   return <div>CompairTwoString</div>;
 }
 
