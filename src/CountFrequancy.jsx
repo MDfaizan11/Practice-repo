@@ -342,6 +342,15 @@ function CountFrequancy() {
   }
   findWordFrequency(word);
 
+  const nums = "aabbccdd";
+  function countNums(word) {
+    const result = {};
+    for (let char of word) {
+      result[char] = (result[char] || 0) + 1;
+    }
+    console.log(result);
+  }
+  countNums(nums);
   return <div>CountFrequancy</div>;
 }
 

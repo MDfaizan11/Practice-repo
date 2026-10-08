@@ -37,6 +37,18 @@ function Factorial() {
   }
   const result2 = findFactorial2(5);
   console.log(result2);
+
+  function findfactorial(num) {
+    if (num < 0) {
+      return console.log("negetive num not allowed");
+    }
+    if (num === 0 || num === 1) {
+      return 1;
+    }
+
+    return num * findFactorial(num - 1);
+  }
+  console.log(findfactorial(4));
   return <div>Factorial</div>;
 }
 

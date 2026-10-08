@@ -51,6 +51,19 @@ function FindCommonElement() {
     console.log(result);
   }
   findCommon1(string1, string2);
+
+  let nums1 = [1, 2, 3, 4, 5, 6];
+  let nums2 = [3, 4, 5];
+  function findcommon(n1, n2) {
+    const result = [];
+    for (let nums of n1) {
+      if (n2.includes(nums)) {
+        result.push(nums);
+      }
+    }
+    console.log(result);
+  }
+  findcommon(nums1, nums2);
   return <div>FindCommonElement</div>;
 }
 

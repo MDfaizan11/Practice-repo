@@ -315,5 +315,18 @@ export default function CountWovel() {
     console.log(result.length);
   }
   findName1Wovel(name1);
+
+  const Name2 = "faizan";
+  let name2Wovel = ["f", "i", "a"];
+  function findName2Wovel(name) {
+    const result = [];
+    for (let char of name) {
+      if (name2Wovel.includes(char) && !result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result.length);
+  }
+  findName2Wovel(Name2);
   return <div>CountWovel</div>;
 }
