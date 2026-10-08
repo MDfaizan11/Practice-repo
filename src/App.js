@@ -77,7 +77,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <FindLargeNumber />
+        <FindLargestString />
       </Suspense>
     </>
   );

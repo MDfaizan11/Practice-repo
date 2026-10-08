@@ -247,6 +247,20 @@ function FindLargestSting() {
   console.log(largestName5);
   console.log(secoundlargestName5);
 
+  const name6 = "mohammed faizan khan";
+  let logngestName6String = "";
+  let smallName6String = "";
+  for (let large of name6.split(" ")) {
+    if (large.length > logngestName6String.length) {
+      smallName6String = logngestName6String;
+      logngestName6String = large;
+    } else if (large.length > smallName6String.length) {
+      smallName6String = large;
+    }
+  }
+  console.log(logngestName6String);
+  console.log(smallName6String);
+
   return <div>FindLargestSting</div>;
 }
 

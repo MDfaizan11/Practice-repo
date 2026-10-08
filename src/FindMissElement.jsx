@@ -237,6 +237,10 @@ function FindMissElement() {
   }
   findmissnum(nums1);
 
+
+
+  
+
   return <div>FindMissElement</div>;
 }
 
