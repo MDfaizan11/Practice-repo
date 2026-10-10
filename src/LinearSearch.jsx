@@ -54,6 +54,20 @@ function LinearSearch() {
     return -1;
   }
   console.log(linea(arr4, 8));
+
+  const arr5 = [1, 2, 3, 4, 5, 6];
+  const arr5Target = 5;
+
+  function findarr5(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) {
+        return i;
+      }
+    }
+    return 1;
+  }
+  const resultarr5 = findarr5(arr5, arr5Target);
+  console.log(resultarr5);
   return <div>LinearSearch</div>;
 }
 

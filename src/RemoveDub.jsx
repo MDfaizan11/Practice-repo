@@ -269,6 +269,18 @@ function RemoveDub() {
     console.log(result);
   }
   removenum1(num1);
+
+  const nums = [1, 1, 2, 2, 3, 4, 5, 6];
+  function removeNums(num) {
+    let result = [];
+    for (let char of num) {
+      if (!result.includes(char)) {
+        result.push(char);
+      }
+    }
+    console.log(result);
+  }
+  removeNums(nums);
   return <div>RemoveDub</div>;
 }
 

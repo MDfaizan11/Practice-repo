@@ -237,10 +237,25 @@ function FindMissElement() {
   }
   findmissnum(nums1);
 
+  const nums4 = [1, 2, 5, 6, 7, 8, 9];
+  // const checklengthnums4 = nums4.length + 1;
+  // const expextedNums4 = (checklengthnums4 * (checklengthnums4 + 1)) / 2;
+  // const originalnums4 = nums4.reduce((prev, curr) => prev + curr, 0);
+  // const missnums4 = expextedNums4 - originalnums4;
+  // console.log(missnums4);
 
+  function findnums4Missing(nums) {
+    const maxnum = Math.max(...nums);
+    let result = [];
+    for (let i = 1; i < maxnum; i++) {
+      if (!nums.includes(i)) {
+        result.push(i);
+      }
+    }
 
-  
-
+    console.log(result);
+  }
+  findnums4Missing(nums4);
   return <div>FindMissElement</div>;
 }
 

@@ -136,6 +136,29 @@ function FirstNonRepeat() {
     return result;
   }
   findnon(word);
+
+  const words = "aabccdee";
+
+  function findnonRepetWord(word) {
+    const frequency = {};
+    let count = 0;
+    for (let char of word) {
+      frequency[char] = (frequency[char] || 0) + 1;
+    }
+    console.log(frequency);
+
+    for (let char of word) {
+      if (frequency[char] === 1) {
+        count++;
+
+        if (count === 2) {
+          console.log(char);
+          return;
+        }
+      }
+    }
+  }
+  findnonRepetWord(words);
   return <div>FirstNonRepeat</div>;
 }
 

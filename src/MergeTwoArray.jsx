@@ -84,6 +84,26 @@ function MergeTwoArray() {
     console.log(result);
   }
   mergearr(arr5, arr6);
+
+  const arr7 = [1, 2, 3];
+  const arr8 = [4, 5, 6];
+
+  function mergeArrSeven(arr7, arr8) {
+    const result = [];
+    let index = 0;
+    for (let i = 0; i < arr7.length; i++) {
+      result[index] = arr7[i];
+      index++;
+    }
+
+    for (let i = 0; i < arr8.length; i++) {
+      result[index] = arr8[i];
+      index++;
+    }
+
+    console.log(result);
+  }
+  mergeArrSeven(arr7, arr8);
   return <div>MergeTwoArray</div>;
 }
 

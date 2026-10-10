@@ -111,6 +111,22 @@ function FlattenArray() {
   }
   let result5 = faltarr5(arr5);
   console.log(result5);
+
+  const arr6 = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+  function flatarr6(arr) {
+    const result = [];
+    for (let nums of arr) {
+      if (Array.isArray(nums)) {
+        result.push(...flatarr6(nums));
+      } else {
+        result.push(nums);
+      }
+    }
+
+    return result;
+  }
+  const result6 = flatarr6(arr6);
+  console.log(result6);
   return <div>FlattenArray</div>;
 }
 

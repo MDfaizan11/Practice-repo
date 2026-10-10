@@ -4,6 +4,7 @@ function Toggle() {
   const { ProductData } = useContext(userdataContext);
   const [itemId, setItemId] = useState("");
   const [newItemId, setNewItemId] = useState("");
+  const [fruitId, setFruitid] = useState("");
   const data = [
     {
       id: 1,
@@ -32,6 +33,9 @@ function Toggle() {
     setNewItemId((prev) => (prev === id ? null : id));
   }
 
+  function handleClick(id) {
+    setFruitid((prev) => (prev === id ? null : id));
+  }
   return (
     <>
       <div>
@@ -83,6 +87,25 @@ function Toggle() {
           <div>
             <p>{item.title}</p>
           </div>
+        );
+      })}
+
+      {data.map((item) => {
+        return (
+          <ul key={item.id}>
+            <li>{item.name}</li>
+            <button onClick={(e) => handleClick(item.id)}>
+              {item.id === fruitId ? "close" : "open"}
+            </button>
+            {item.id === fruitId &&
+              item.subcategories.map((item) => {
+                return (
+                  <ul key={item.id}>
+                    <li>{item.name}</li>
+                  </ul>
+                );
+              })}
+          </ul>
         );
       })}
     </>
