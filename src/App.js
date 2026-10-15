@@ -73,11 +73,12 @@ const DebouncingSearch = lazy(() => import("./DebouncingSearch"));
 const DebouncingData = lazy(() => import("./DebouncingData"));
 const CountryCity = lazy(() => import("./CountryCity"));
 const DebouncingList = lazy(() => import("./DebouncingList"));
+const Pegination = lazy(() => import("./Pegination"));
 function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Toggle />
+        <Pegination />
       </Suspense>
     </>
   );
