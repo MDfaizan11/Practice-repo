@@ -78,7 +78,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<p> Loadings...</p>}>
-        <Pegination />
+        <City />
       </Suspense>
     </>
   );

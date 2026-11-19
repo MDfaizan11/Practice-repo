@@ -139,6 +139,13 @@ function CapitalWord() {
     console.log(result.join(" "));
   }
   capitalsWords(words);
+
+  const name1 = "mohammed faizan";
+  const result1 = name1.split(" ").map((item, index) => {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  });
+  console.log(result1.join(" "));
+
   return <div>CapitalWord</div>;
 }
 

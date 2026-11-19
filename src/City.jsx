@@ -119,6 +119,10 @@ function City() {
 
   const [newCountry, setNewCountry] = useState([]);
   const [newCity, setNewCity] = useState([]);
+
+  const [selectedCountry, setSelectedCountry] = useState([]);
+  const [SelectedCity, setSelectedCity] = useState([]);
+
   const countries = [
     {
       id: 1,
@@ -275,6 +279,16 @@ function City() {
     const cityName = e.target.value;
     setMyCity(cityName);
   }
+
+  function SelectnewCOuntry(e) {
+    const country = Number(e.target.value);
+    console.log(country);
+    const city = countriesNames.find((item, index) => {
+      return item.id === country;
+    });
+    console.log(city?.cities || []);
+    setSelectedCity(city?.cities || []);
+  }
   return (
     <>
       <p>City</p>
@@ -363,6 +377,19 @@ function City() {
               <option value="">{item}</option>
             </>
           );
+        })}
+      </select>
+
+      <select name="" id="" value={selectedCountry} onChange={SelectnewCOuntry}>
+        <option value="">Select Country</option>
+        {countriesNames.map((item, index) => {
+          return <option value={item.id}>{item.country}</option>;
+        })}
+      </select>
+
+      <select name="" id="">
+        {SelectedCity.map((item, index) => {
+          return <option value="">{item}</option>;
         })}
       </select>
     </>
